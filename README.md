@@ -1,0 +1,2 @@
+generated with:
+  yo angular
