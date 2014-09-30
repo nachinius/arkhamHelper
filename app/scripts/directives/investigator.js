@@ -10,6 +10,7 @@ angular.module('arkhamHelperApp')
   .directive('investigator', function () {
     return {
       templateUrl: 'views/templates/investigatorDirective.html',
-      restrict: 'E'
+      restrict: 'E',
+      scope: { inv: 'inv'}
     };
   });
