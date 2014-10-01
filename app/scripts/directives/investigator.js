@@ -11,6 +11,6 @@ angular.module('arkhamHelperApp')
     return {
       templateUrl: 'views/templates/investigatorDirective.html',
       restrict: 'E',
-      scope: { inv: 'inv'}
+      scope: { inv: '=inv'}
     };
   });
