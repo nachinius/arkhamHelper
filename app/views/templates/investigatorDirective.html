@@ -1,5 +1,5 @@
 <div class="container-fluid investigator">
-	<div class="row show-grid">
+	<div class="row">
 		<div class="row head">
 			<div class="col-xs-6">
 				<img ng-src="/images/arkham/investigators/{{ inv.image }}" />
@@ -18,9 +18,9 @@
 					<plus-minus value="inv.maxStamina"></plus-minus>
 				</div>
 				<div class="row">
-          <plus-minus value="inv.money"></plus-minus>
-          {{ inv.money}} $
-        </div>
+					<plus-minus value="inv.money"></plus-minus>
+					{{ inv.money}} $
+				</div>
 			</div>
 		</div>
 		<div class="row middle">
@@ -36,48 +36,9 @@
 			</div>
 		</div>
 		<div class="row skills">
-			<div class="row">
-				<div class="col-xs-4">SPEED</div>
-				<div class="col-xs-2">{{ inv.minSpeed + 0}}</div>
-				<div class="col-xs-2">{{ inv.minSpeed + 1}}</div>
-				<div class="col-xs-2">{{ inv.minSpeed + 2}}</div>
-				<div class="col-xs-2">{{ inv.minSpeed + 3}}</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-4">SNEAK</div>
-				<div class="col-xs-2">{{ inv.minSneek + 3}}</div>
-				<div class="col-xs-2">{{ inv.minSneek + 2}}</div>
-				<div class="col-xs-2">{{ inv.minSneek + 1}}</div>
-				<div class="col-xs-2">{{ inv.minSneek + 0}}</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-4">FIGHT</div>
-				<div class="col-xs-2">{{ inv.minFight + 0}}</div>
-				<div class="col-xs-2">{{ inv.minFight + 1}}</div>
-				<div class="col-xs-2">{{ inv.minFight + 2}}</div>
-				<div class="col-xs-2">{{ inv.minFight + 3}}</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-4">WILL</div>
-				<div class="col-xs-2">{{ inv.minWill + 3}}</div>
-				<div class="col-xs-2">{{ inv.minWill + 2}}</div>
-				<div class="col-xs-2">{{ inv.minWill + 1}}</div>
-				<div class="col-xs-2">{{ inv.minWill + 0}}</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-4">LORE</div>
-				<div class="col-xs-2">{{ inv.minLore + 0}}</div>
-				<div class="col-xs-2">{{ inv.minLore + 1}}</div>
-				<div class="col-xs-2">{{ inv.minLore + 2}}</div>
-				<div class="col-xs-2">{{ inv.minLore + 3}}</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-4">LUCK</div>
-				<div class="col-xs-2">{{ inv.minLuck + 3}}</div>
-				<div class="col-xs-2">{{ inv.minLuck + 2}}</div>
-				<div class="col-xs-2">{{ inv.minLuck + 1}}</div>
-				<div class="col-xs-2">{{ inv.minLuck + 0}}</div>
-			</div>
+			<skill-tuple first="Speed" second="Sneek" inv="inv"></skill-tuple>
+			<skill-tuple first="Fight" second="Will" inv="inv" ></skill-tuple>
+			<skill-tuple first="Lore" second="Luck" inv="inv" ></skill-tuple>
 		</div>
 	</div>
 
