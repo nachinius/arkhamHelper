@@ -14,11 +14,10 @@ angular.module('arkhamHelperApp')
       scope: {
         first: '@',
         second: '@',
-        inv: '=',
-        high: '@'
+        inv: '='
       },
       link: function postLink(scope, element, attrs) {
-        scope.selected = -1;
+        scope.selected = -1; 
         scope.change = function(val) {
           scope.selected = val;
         }

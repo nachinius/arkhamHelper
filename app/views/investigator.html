@@ -1,6 +1,5 @@
 <div ng-controller="InvestigatorCtrl">
-<p>This is the investigator view.</p>
 
-<investigator inv="investigators[0]"></investigator>
+<investigator ng-repeat="x in [1,0]" inv="investigators[x]"></investigator>
 
 </div>

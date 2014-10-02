@@ -8,9 +8,9 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-4 text-uppercase">{{ second }}</div>
-		<div class="col-xs-2 btn" ng-click="change(x)"
-		ng-class="{'btn-success': (selected == x)}"
-			ng-repeat="x in [0,1,2,3]">
+		<div class="col-xs-2 btn" ng-click="change(3-x)"
+		ng-class="{'btn-success': (3-selected == x)}"
+			ng-repeat="x in [3,2,1,0]">
 			{{ inv['min'+second] + x}}</div>
 	</div>
 </div>
