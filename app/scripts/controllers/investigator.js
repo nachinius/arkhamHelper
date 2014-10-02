@@ -13,5 +13,6 @@ angular.module('arkhamHelperApp').controller('InvestigatorCtrl',
           'HTML5 Boilerplate', 'AngularJS', 'Karma'
       ];
       
+      
       $scope.investigators = investigatorsData;
     });

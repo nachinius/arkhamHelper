@@ -1,5 +1,16 @@
 <div ng-controller="InvestigatorCtrl">
 
-<investigator ng-repeat="inv in investigators" inv="inv"></investigator>
+<div><h3>Selector <button  ng-click="hideSelector=!hideSelector">Show/Hide</button></h3>
+	<ul class="container-fluid" ng-hide="hideSelector">
+		<li ng-click="inv.inUse=!inv.inUse" ng-class="{'btn-success': inv.inUse, 'btn-info': !inv.inUse}" class="btn btn-lg" ng-repeat="inv in investigators">
+		  <img height="50px" ng-src="/images/arkham/investigators/{{ inv.image }}" />
+			{{ inv.name }}</li>
+	</ul>
+</div>
 
+<div><h3>Investigators<button  ng-click="hideInvestigatorList=!hideInvestigatorList">Show/Hide</button></h3>
+	<div ng-hide="hideInvestigatorList">
+	<investigator ng-show="!!inv.inUse" ng-repeat="inv in investigators" inv="inv"></investigator>
+	</div>
+</div>
 </div>
