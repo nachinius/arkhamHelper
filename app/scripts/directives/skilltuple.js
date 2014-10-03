@@ -18,14 +18,21 @@ angular.module('arkhamHelperApp')
         inv: '='
       },
       link: function postLink(scope, element, attrs) {
+        // keep which one has been selected
         scope.selected = -1;
+        
+        // shortcuts
         var inv = scope.inv;
         var first = scope.first;
         var second = scope.second;
+        
+        // on change
         scope.select = function(x) {
           inv['cur'+first] = inv['min'+first]+x;
           scope.selected = x;
         }
+        
+        // on first run, find which one is the default
         scope.selected = inv['cur'+first]-inv['min'+first];
       }
     };
