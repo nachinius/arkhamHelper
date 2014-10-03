@@ -9,10 +9,7 @@
  */
 angular.module('arkhamHelperApp').controller('InvestigatorCtrl',
     function($scope, investigatorsData) {
-      $scope.awesomeThings = [
-          'HTML5 Boilerplate', 'AngularJS', 'Karma'
-      ];
-      
+
       
       $scope.investigators = investigatorsData;
     });

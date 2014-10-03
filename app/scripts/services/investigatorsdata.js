@@ -12,30 +12,7 @@ angular
     .value(
         'investigatorsData',
         [
-            {
-              image : 'JennyBarnesCard.jpg',
-              name : 'Jenny Barnes',
-              profession : 'the Dilettante',
-              money : 10,
-              curSanity : 6,
-              maxSanity : 6,
-              curStamina : 4,
-              maxStamina : 4,
-              clues: 0,
-              home : 'Train Station',
-              focus : 2,
-              specialAbilityTitle : 'Trust Fund',
-              specialAbilityDescription : 'Upkeep: Jenny gains $1',
-              minSpeed : 0,
-              minSneak : 1,
-              minFight : 1,
-              minWill : 2,
-              minLore : 1,
-              minLuck : 2,
-              curSpeed : 1,
-              curFight : 1,
-              curLore : 1
-            },
+           
             {
               image : 'AmandaSharpeCard.png',
               name : 'Amanda Sharpe',
@@ -241,6 +218,31 @@ angular
               storySoFar: "Harvey is a visiting Professor at Miskatonic University. With Doctorates in History and Archaeology, he has uncovered several interesting artifacts over the years and learned a little of the arcane arts. Recently, by carefully studying the papers and talking to people in the streets, he has begun to detect a disturbance in the city-- something that could potentially herald the arrival of something unthinkable from beyond time and space. Checking his notes, Professor Walters prepares himself for one last trip into the streets of Arkham to confirm his theory. If he's right, it could spell the end of everything."
             },
             
+            {
+              image : 'JennyBarnesCard.jpg',
+              name : 'Jenny Barnes',
+              profession : 'the Dilettante',
+              money : 10,
+              curSanity : 6,
+              maxSanity : 6,
+              curStamina : 4,
+              maxStamina : 4,
+              clues: 0,
+              home : 'Train Station',
+              focus : 2,
+              specialAbilityTitle : 'Trust Fund',
+              specialAbilityDescription : 'Upkeep: Jenny gains $1',
+              minSpeed : 0,
+              minSneak : 1,
+              minFight : 1,
+              minWill : 2,
+              minLore : 1,
+              minLuck : 2,
+              curSpeed : 1,
+              curFight : 1,
+              curLore : 1,
+              storySoFar: "Several months ago, Jenny was visiting Paris when she received a letter from her sister, Isabelle. In it, Isabelle rambled incoherantly, writing about men in dark cloaks following her wherever she went, and of hoofprints in the woods, left by an enormous goat. The outside of the envelope was partailly stained with blood, and it was mailed from Arkham. That was the last letter from Isabelle she received. Jenny has since returned to the States, coming to Arkham to find her missing sister. Stepping off the train from Boston into the dark autumn night, she believes that her sister was abducted by a strange cult, and is determined to find her and thwart the plans of those that took her... even if she has to save all of Arkham in the process."
+            },
             
             
             

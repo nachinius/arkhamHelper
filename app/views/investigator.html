@@ -1,16 +1,53 @@
 <div ng-controller="InvestigatorCtrl">
 
-<div><h3>Selector <button  ng-click="hideSelector=!hideSelector">Show/Hide</button></h3>
-	<ul class="container-fluid" ng-hide="hideSelector">
-		<li ng-click="inv.inUse=!inv.inUse" ng-class="{'btn-success': inv.inUse, 'btn-info': !inv.inUse}" class="btn btn-lg" ng-repeat="inv in investigators">
-		  <img height="50px" ng-src="/images/arkham/investigators/{{ inv.image }}" />
-			{{ inv.name }}</li>
-	</ul>
-</div>
+	<!-- helping refresh development -->
+	<div ng-init="investigators[0].inUse=true;investigators[1].inUse=true;"></div>
 
-<div><h3>Investigators<button  ng-click="hideInvestigatorList=!hideInvestigatorList">Show/Hide</button></h3>
-	<div ng-hide="hideInvestigatorList">
-	<investigator ng-show="!!inv.inUse" ng-repeat="inv in investigators" inv="inv"></investigator>
+
+	<div>
+		<h3>
+			Settings
+			<button class="btn btn-small" ng-click="hideSelector=!hideSelector">Show/Hide</button>
+		</h3>
+		<div>
+			<h4>Select active investigators</h4>
+			<ul class="well col-" ng-hide="hideSelector">
+				<li ng-click="inv.inUse=!inv.inUse"
+					ng-class="{'btn-success': inv.inUse, 'btn-default': !inv.inUse}"
+					class="btn" ng-repeat="inv in investigators"><img
+					height="50px" ng-src="/images/arkham/investigators/{{ inv.image }}" />
+					{{ inv.name }}</li>
+			</ul>
+		</div>
+		<div>
+		  <h4>Chose first investigator</h4>
+		  <ul>
+		    <li ng-repeat="inv in investigators"><img
+          height="50px" ng-src="/images/arkham/investigators/{{ inv.image }}" /></li>
+		  </ul>
+		</div>
 	</div>
-</div>
+
+
+	<div ng-controller="PhaseCtrl">
+		<h3>
+			Phase: <big><strong>{{
+					phase.phases[phase.currentPhase] }}</strong></big>
+			<button class="btn btn-small" ng-click="hidePhase=!hidePhase">Show/Hide</button>
+		</h3>
+		<button ng-click="phase.nextPhase()" class="btn btn-big btn-success">Next
+			Phase ({{ phase.currentPhase }}-{{ phase.counter}})</button>
+	</div>
+
+	<div>
+		<h3>
+			Investigators
+			<button class="btn btn-small"
+				ng-click="hideInvestigatorList=!hideInvestigatorList">Show/Hide</button>
+		</h3>
+		<div ng-hide="hideInvestigatorList">
+			<investigator ng-show="!!inv.inUse" ng-repeat="inv in investigators"
+				inv="inv"></investigator>
+		</div>
+	</div>
 </div>
