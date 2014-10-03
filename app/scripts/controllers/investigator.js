@@ -8,8 +8,8 @@
  * Controller of the arkhamHelperApp
  */
 angular.module('arkhamHelperApp').controller('InvestigatorCtrl',
-    function($scope, investigatorsData) {
+    function($scope, activeInvestigators) {
 
-      
-      $scope.investigators = investigatorsData;
-    });
+      $scope.investigators = activeInvestigators.list;
+
+});

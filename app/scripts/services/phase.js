@@ -3,7 +3,7 @@
 /**
  * @ngdoc service
  * @name arkhamHelperApp.phase
- * @description
+ * @description 
  * # phase
  * Service in the arkhamHelperApp.
  */
