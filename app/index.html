@@ -24,9 +24,9 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
+          <li><a ng-href="#">Home</a></li>
+          <li><a ng-href="#/settings">Settings</a></li>
+          <li><a ng-href="#/investigator">Investigator</a></li>
         </ul>
         <h3 class="text-muted">arkhamHelper</h3>
       </div>
@@ -34,7 +34,7 @@
       <div ng-view=""></div>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span class="glyphicon glyphicon-asterisk"></span> by nachinius</p>
       </div>
     </div>
 
@@ -48,6 +48,7 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -56,6 +57,9 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-underscore-module/angular-underscore-module.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -71,6 +75,7 @@
         <script src="scripts/services/phase.js"></script>
         <script src="scripts/controllers/phase.js"></script>
         <script src="scripts/services/activeinvestigators.js"></script>
+        <script src="scripts/controllers/settings.js"></script>
         <!-- endbuild -->
 </body>
 </html>

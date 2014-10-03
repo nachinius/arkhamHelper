@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'underscore',
+    'ui.sortable'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -30,6 +32,10 @@ angular
       .when('/investigator', {
         templateUrl: 'views/investigator.html',
         controller: 'InvestigatorCtrl'
+      })
+      .when('/settings', {
+        templateUrl: 'views/settings.html',
+        controller: 'SettingsCtrl'
       })
       .otherwise({
         redirectTo: '/'

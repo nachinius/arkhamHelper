@@ -78,11 +78,9 @@ body {
   }
 }
 
-.container.investigator {
-	width: 400px;  
-	border: 1px dashed red;
-}
-
+/**
+ * show-grid from bootstrap documentation
+ */
 .show-grid {
   margin-bottom: 15px
 }
