@@ -3,7 +3,7 @@
 /**
  * @ngdoc service
  * @name arkhamHelperApp.investigatorsData
- * @description
+ * @description keep a list of the original card information from investigators
  * # investigatorsData
  * Value in the arkhamHelperApp.
  */

@@ -13,7 +13,7 @@ angular.module('arkhamHelperApp')
     // link to services
       $scope.investigatorsData = investigatorsData;
       $scope.activeList = activeInvestigators.list;
-
+      
       /**
        * Toggle Investigator active/inactive
        */
@@ -30,5 +30,6 @@ angular.module('arkhamHelperApp')
           $scope.activeList.push(inv);
         }
       }
-
+      
+    
   });

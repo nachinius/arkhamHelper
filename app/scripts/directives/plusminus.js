@@ -3,7 +3,9 @@
 /**
  * @ngdoc directive
  * @name arkhamHelperApp.directive:controlPlusMinus
- * @description
+ * @description Add a Plus symbol and a Minus symbol
+ * that when clicked control an integer number which
+ * must be provided.
  * # controlPlusMinus
  */
 angular.module('arkhamHelperApp').directive(

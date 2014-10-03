@@ -14,9 +14,9 @@
   </div>
 
   <div>
-    <h4>Order investigators turn</h4>
+    <h4>Initial ordering</h4>
     <ol class="well" ui-sortable ng-model="activeList">
-      <li ng-repeat="inv in activeList">
+      <li ng-repeat="inv in activeList" bg-info>
       <img height="100px" ng-src="/images/arkham/investigators/{{ inv.image }}" />
       {{ inv.name}}
       </li>
