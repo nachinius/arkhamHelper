@@ -108,3 +108,22 @@ body {
 .box-mark {
 	border: black 1px dashed;
 }
+.box-mark-red: {
+	border: red solid;
+}
+
+.investigator {
+	padding: 10px;
+}
+span.huge {
+	font-size: 3em;
+}
+span.normal {
+	font-size: 1em;
+}
+span.big {
+	font-size: 2em;
+}
+span.small {
+	font-size: 0.85em;
+}
