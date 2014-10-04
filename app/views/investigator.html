@@ -6,8 +6,25 @@
 					phase.phases[phase.currentPhase] }}</strong></big>
 			<button class="btn btn-small" ng-click="hidePhase=!hidePhase">Show/Hide</button>
 		</h3>
-		<button ng-click="phase.nextPhase()" class="btn btn-big btn-success">Next
-			Phase ({{ phase.currentPhase }}-{{ phase.counter}})</button>
+		<div>
+			<button ng-click="phase.nextPhase()" class="btn btn-warning">Next
+				Phase ({{ phase.currentPhase }}-{{ phase.counter}})</button>
+		</div>
+		<div>
+			<button ng-click="phase.nextInvestigatorOrPhase()"
+				class="btn btn-success">Next Turn</button>
+			<div>
+				<div class="row">
+					<div class="col-xs-4">Current:</div>
+					<div class="col-xs-4">{{ phase.currentInvestigator.name}}</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">First:</div>
+					<div class="col-xs-4">{{ phase.firstInvestigator.name}}</div>
+				</div>
+			</div>
+
+		</div>
 	</div>
 
 	<div>
@@ -17,7 +34,7 @@
 				ng-click="hideInvestigatorList=!hideInvestigatorList">Show/Hide</button>
 		</h3>
 		<div ng-hide="hideInvestigatorList">
-			<investigator ng-show="!!inv.inUse" ng-repeat="inv in investigators"
+			<investigator ng-repeat="inv in investigators"
 				inv="inv"></investigator>
 		</div>
 	</div>
