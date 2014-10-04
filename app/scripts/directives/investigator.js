@@ -6,11 +6,14 @@
  * @description
  * # investigator
  */
-angular.module('arkhamHelperApp')
-  .directive('investigator', function () {
-    return {
-      templateUrl: 'views/templates/investigatorDirective.html',
-      restrict: 'E',
-      scope: { inv: '='}
-    };
-  });
+angular.module('arkhamHelperApp').directive('investigator', function() {
+  return {
+    templateUrl : 'views/templates/investigatorDirective.html',
+    restrict : 'E',
+    scope : {
+      inv : '=',
+      first: '=',
+      current: '='
+    }
+  };
+});

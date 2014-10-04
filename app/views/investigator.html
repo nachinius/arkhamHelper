@@ -1,41 +1,31 @@
-<div>
 
-	<div ng-controller="PhaseCtrl">
-		<h3>
-			Phase: <big><strong>{{
-					phase.phases[phase.currentPhase] }}</strong></big>
-			<button class="btn btn-small" ng-click="hidePhase=!hidePhase">Show/Hide</button>
-		</h3>
-		<div>
-			<button ng-click="phase.nextPhase()" class="btn btn-warning">Next
-				Phase ({{ phase.currentPhase }}-{{ phase.counter}})</button>
-		</div>
-		<div>
-			<button ng-click="phase.nextInvestigatorOrPhase()"
-				class="btn btn-success">Next Turn</button>
-			<div>
-				<div class="row">
-					<div class="col-xs-4">Current:</div>
-					<div class="col-xs-4">{{ phase.currentInvestigator.name}}</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-4">First:</div>
-					<div class="col-xs-4">{{ phase.firstInvestigator.name}}</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
+<div ng-controller="PhaseCtrl" class=" text-center">
+	<h2 class="text-center">
+		Phase: <big><strong>{{ phase.phases[phase.currentPhase] }}</big></strong>
+	</h2>
 	<div>
-		<h3>
-			Investigators
-			<button class="btn btn-small"
-				ng-click="hideInvestigatorList=!hideInvestigatorList">Show/Hide</button>
-		</h3>
-		<div ng-hide="hideInvestigatorList">
-			<investigator ng-repeat="inv in investigators"
-				inv="inv"></investigator>
+		<button ng-click="phase.nextInvestigatorOrPhase()"
+			class="btn btn-success">Next Turn</button>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4">Current:</div>
+				<div class="col-xs-4">{{ phase.currentInvestigator.name}}</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">First:</div>
+				<div class="col-xs-4">{{ phase.firstInvestigator.name}}</div>
+			</div>
 		</div>
+
+	</div>
+</div>
+
+<div>
+	<h2>
+		Investigators
+		<button class="btn btn-small" ng-click="hideInvestigatorList=!hideInvestigatorList">Show/Hide</button>
+	</h2>
+	<div ng-hide="hideInvestigatorList">
+		<investigator ng-repeat="inv in investigators" inv="inv" first="phase.firstInvestigator" current="phase.currentInvestigator"></investigator>
 	</div>
 </div>
