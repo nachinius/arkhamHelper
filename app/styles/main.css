@@ -98,3 +98,13 @@ body {
 	.padding: 1px;
 	background-color: #eee;
 }
+
+.fix-me-next-turn {
+	position: fixed;
+	left:10px;
+	top:100px;
+}
+
+.box-mark {
+	border: black 1px dashed;
+}
