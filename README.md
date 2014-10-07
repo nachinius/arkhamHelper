@@ -18,9 +18,12 @@ a browser at
 
     http://localhost:9001
 
-For fully client app (no node.js), should be available
-through some grunt build but I haven't tested
-if works neatly.
+with
+
+    grunt build
+
+all files are copy to /dist which can be
+served statically.
 
 ## Develop
 
