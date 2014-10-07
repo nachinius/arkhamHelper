@@ -99,22 +99,16 @@ body {
 	background-color: #eee;
 }
 
-.fix-me-next-turn {
-	position: fixed;
-	left:10px;
-	top:100px;
-}
-
 .box-mark {
 	border: black 1px dashed;
 }
 .box-mark-red: {
-	border: red solid;
+	border: red 1px solid;
 }
 
-.investigator {
-	padding: 10px;
-}
+/**
+ * QUICK huge normal and bid
+ */
 span.huge {
 	font-size: 3em;
 }
@@ -127,3 +121,18 @@ span.big {
 span.small {
 	font-size: 0.85em;
 }
+
+/**
+ * investigator 
+ */
+ .investigator-page .investigator-list-container {
+  height: 600px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+ }
+ .investigator-page .investigator-list-container .investigator {
+ margin-top: 5px;
+ margin-bottom: 5px;
+  padding: 10px;
+  height: 580px;
+ }
