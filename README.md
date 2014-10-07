@@ -11,7 +11,8 @@ However, for developing it uses node.js
 ## Usage
 
 run 
-  grunt serve
+
+    grunt serve
 and it should run the node.js server and open
 a browser at localhost:9001
 
@@ -22,15 +23,17 @@ if works neatly.
 ## Develop
 
 Run 
-  grunt serve
+
+    grunt serve
 and modify files as needed. It
 should automatically reload.
 
 ## generated initial structure with
-  yo angular
+
+    yo angular
 
 Yeoman is used for generating new angular's
-services, directives, controllers, and misc. @see 
-  yo angular -h
-and
-  https://github.com/yeoman/generator-angular
+services, directives, controllers, and misc. See
+
+    yo angular -h
+and https://github.com/yeoman/generator-angular
