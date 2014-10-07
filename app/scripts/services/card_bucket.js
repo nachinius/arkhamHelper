@@ -10,14 +10,12 @@
 angular.module('arkhamHelperApp')
   .factory('cardBucket', function () {
     // Service logic
-    // ...
 
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
+    var cardBucket = function() {
+      cardBucket.list = [];
+      return cardBucket;
     };
+    
+    // Public API here
+    return cardBucket;
   });

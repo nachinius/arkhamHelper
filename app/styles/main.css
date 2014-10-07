@@ -131,8 +131,7 @@ span.small {
   overflow-x: hidden;
  }
  .investigator-page .investigator-list-container .investigator {
- margin-top: 5px;
- margin-bottom: 5px;
-  padding: 10px;
-  height: 580px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   padding: 10px;
  }

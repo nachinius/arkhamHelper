@@ -7,7 +7,7 @@
  * # commonItemsData
  * Constant in the arkhamHelperApp.
  */
-angular.module('arkhamHelperApp').constant('commonItemsData', {
+angular.module('arkhamHelperApp').constant('commonItemsData', [
   {
     name : '.18 Derringer',
     price : 3,
@@ -29,4 +29,4 @@ angular.module('arkhamHelperApp').constant('commonItemsData', {
     image : '',
     quantity : 2
   }
-});
+]);
