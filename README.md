@@ -14,7 +14,9 @@ run
 
     grunt serve
 and it should run the node.js server and open
-a browser at localhost:9001
+a browser at 
+
+    http://localhost:9001
 
 For fully client app (no node.js), should be available
 through some grunt build but I haven't tested
