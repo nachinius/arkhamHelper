@@ -11,11 +11,14 @@ angular.module('arkhamHelperApp')
   .factory('cardBucket', function () {
     // Service logic
 
-    var cardBucket = function() {
-      cardBucket.list = [];
-      return cardBucket;
+    var cardBucket = function(type) {
+      this.list = [];
+      this.type = type;
+      return this;
     };
     
     // Public API here
-    return cardBucket;
+    return function Factory(type) {
+      return new cardBucket(type);
+    }
   });

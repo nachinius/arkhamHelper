@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'underscore',
-    'ui.sortable'
+    'ui.sortable',
+    'Shuffler'
   ])
   .config(function ($routeProvider) {
     $routeProvider
