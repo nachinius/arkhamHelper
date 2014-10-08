@@ -15,4 +15,12 @@ describe('Service: cardPile', function () {
     expect(!!cardPile).toBe(true);
   });
 
+  it('should add a card', function() {
+    var card = {
+        name: 'myName',
+    }
+    cardPile.add(card);
+    
+    expect(cardPile.list).toContain(card);
+  })
 });
