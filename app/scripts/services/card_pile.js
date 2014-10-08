@@ -15,7 +15,7 @@ angular.module('arkhamHelperApp').factory('cardPile', function() {
   
   // Public API here
   return {
-    list : list,
+    list : list, 
     add : function(ele) {
       list.push(ele);
     },
