@@ -32,6 +32,7 @@ angular.module('arkhamHelperApp')
       this.getCardFromGamePile = function() {
         var card = this.pile.draw();
         this.add(card);
+        return card;
       }
       this.type = type;
       this.pile = pile;
