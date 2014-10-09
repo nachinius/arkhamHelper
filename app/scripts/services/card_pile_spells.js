@@ -2,21 +2,24 @@
 
 /**
  * @ngdoc service
- * @name arkhamHelperApp.cardPileCommonItems
+ * @name arkhamHelperApp.cardPileSpells
  * @description
- * # cardPileCommonItems
+ * # cardPileSpells
  * Service in the arkhamHelperApp.
  */
 angular.module('arkhamHelperApp')
-  .service('cardPileCommonItems', function cardPileCommonItems(cardPile, commonItemsData) {
+  .service('cardPileSpells', function cardPileSpells(cardPile, spellItemsData) {
     
     var pile = cardPile();
     var newCard;
     
     // add cards to the piles
-    angular.forEach(commonItemsData, function(ele) {
+    angular.forEach(spellItemsData, function(ele) {
       for(var i=ele.quantity;i>0;i--) {
         
+        if(ele.expansion !== "") {
+          continue;
+        }
         // since there are two cards
         // each card needs to be independent
         newCard = angular.copy(ele);
@@ -24,8 +27,8 @@ angular.module('arkhamHelperApp')
         pile.add(newCard);
       }
     });
-    
-    // my granmother always told me to shuffle decks 7 times :)
+
+    // my granmother always told to shuffle decks 7 times :)
     pile.shuffle(7);
 
     return pile;

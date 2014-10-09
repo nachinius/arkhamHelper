@@ -60,5 +60,13 @@
      </div>
 		<button ng-click="inv.commonCards.draw()">Add Card</button>
 	</div>
+	<div class="row cards">
+    <h4>Spells</h4>
+      <div class="col-xs-2" ng-repeat="card in inv.spellCards.list">
+       <div class="row"><img class="" width="100px" ng-src="images/arkham/spells/{{card.image}}.png"></img></div>
+       <div class="row">{{card.name}}<button ng-click="inv.spellCards.discard(card.name)">Remove</button></div>
+     </div>
+    <button ng-click="inv.spellCards.draw()">Add Card</button>
+  </div>
 <hr>
 </div>
