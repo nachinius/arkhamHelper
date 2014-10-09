@@ -53,28 +53,28 @@
 		<skill-tuple first="Lore" second="Luck" inv="inv"></skill-tuple>
 	</div>
 	<div class="row cards">
-		<h4>Common Items</h4>
+		<h4>Common Items
+		<button ng-click="inv.commonCards.draw()">Draw Common Item</button></h4>
 			<div class="col-xs-2" ng-repeat="card in inv.commonCards.list">
 			 <div class="row"><img class="" width="100px" ng-src="images/arkham/common_items/{{card.image}}"></img></div>
-       <div class="row"><button ng-click="inv.commonCards.discard(card.name)">Remove</button></div>
+       <div class="row"><a href="" ng-click="inv.commonCards.discard(card.name)">Discard</a></div>
      </div>
-		<button ng-click="inv.commonCards.draw()">Draw Common Item</button>
 	</div>
 	<div class="row cards">
-    <h4>Spells</h4>
+    <h4>Spells
+    <button class="" ng-click="inv.spellCards.draw()">Draw Spell</button></h4>
       <div class="col-xs-2" ng-repeat="card in inv.spellCards.list">
        <div class="row"><img class="" width="100px" ng-src="images/arkham/spells/{{card.image}}.png"></img></div>
-       <div class="row">{{card.name}}<button ng-click="inv.spellCards.discard(card.name)">Remove</button></div>
+       <div class="row"><a href="" ng-click="inv.spellCards.discard(card.name)">Discard</a></div>
      </div>
-    <button ng-click="inv.spellCards.draw()">Draw Spell</button>
   </div>
   <div class="row cards">
-    </ul>
+    <button ng-click="inv.skillsCards.draw()">Draw Skill</button>
+    <ul>
      <li  ng-repeat="card in inv.skillsCards.list">{{card.name}}.<span> {{card.text}}</span>
        <a href="" ng-click="inv.skillsCards.discard(card.name)">Discard</a>
      </li>
-    <ul>
-    <button ng-click="inv.skillsCards.draw()">Draw Skill</button>
+    </ul>
   </div>
 <hr>
 </div>
