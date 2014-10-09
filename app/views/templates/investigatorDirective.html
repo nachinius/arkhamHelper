@@ -54,12 +54,10 @@
 	</div>
 	<div class="row cards">
 		<h4>Common Items</h4>
-		<ul>
-			<li class="col-xs-3" ng-repeat="card in inv.commonCards.list">
-			 <div class="row"><img class="" width="80%" ng-src="images/arkham/common_items/{{card.image}}"></img></div>
-			 <div class="row">{{ card.name }}<button ng-click="inv.commonCards.discard(card.name)">Remove</button></div>
-			</li>
-		</ul>
+			<div class="col-xs-2" ng-repeat="card in inv.commonCards.list">
+			 <div class="row"><img class="" width="100px" ng-src="images/arkham/common_items/{{card.image}}"></img></div>
+       <div class="row"><button ng-click="inv.commonCards.discard(card.name)">Remove</button></div>
+     </div>
 		<button ng-click="inv.commonCards.draw()">Add Card</button>
 	</div>
 <hr>
