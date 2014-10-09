@@ -1,5 +1,9 @@
-arkhamHelper
+
+
+arkhamHelper [![Build Status](https://secure.travis-ci.org/nachinius/arkhamHelper.png?branch=master)](https://travis-ci.org/nachinius/arkhamHelper)
 ============
+
+See it live at http://nachinius.github.io/arkhamHelper/#/
 
 Helper to play the arkham horror game board.
 

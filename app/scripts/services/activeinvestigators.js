@@ -8,14 +8,28 @@
  * Service in the arkhamHelperApp.
  */
 angular.module('arkhamHelperApp')
-  .service('activeInvestigators', function activeInvestigators(investigatorsData) {
+  .service('activeInvestigators', function activeInvestigators(investigatorsData, 
+      cardBucket,
+      cardPileCommonItems) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     
     this.list = [];
+
+    this.add = function(inv) {
+      // set card bucket list
+      inv.commonCards = cardBucket('commonItems', cardPileCommonItems);
+      
+      var card = cardPileCommonItems.draw();
+      inv.commonCards.list.push(card);
+      
+      card = cardPileCommonItems.draw();
+      inv.commonCards.list.push(card);
+      
+      inv.inUse = true;
+      this.list.push(inv);
+    }
     
-    this.list.push(investigatorsData[8]);
-    this.list.push(investigatorsData[11]);
-    investigatorsData[8].inUse = true;
-    investigatorsData[11].inUse = true;
+    this.add(investigatorsData[8]);
+    this.add(investigatorsData[11]);
     
   });

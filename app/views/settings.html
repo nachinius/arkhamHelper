@@ -8,7 +8,7 @@
       <li ng-click="toggle(inv)"
       ng-class="{'btn-success': inv.inUse, 'btn-default': !inv.inUse}"
       class="btn" ng-repeat="inv in investigatorsData"><img
-      height="50px" ng-src="/images/arkham/investigators/{{ inv.image }}" />
+      height="50px" ng-src="images/arkham/investigators/{{ inv.image }}" />
       {{ inv.name }}</li>
     </ul>
   </div>
@@ -17,7 +17,7 @@
     <h4>Initial ordering</h4>
     <ol class="well" ui-sortable ng-model="activeList">
       <li ng-repeat="inv in activeList" bg-info>
-      <img height="100px" ng-src="/images/arkham/investigators/{{ inv.image }}" />
+      <img height="100px" ng-src="images/arkham/investigators/{{ inv.image }}" />
       {{ inv.name}}
       </li>
     </ol>

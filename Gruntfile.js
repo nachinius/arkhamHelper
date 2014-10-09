@@ -41,7 +41,7 @@ module.exports = function (grunt) {
         }
       },
       jsTest: {
-        files: ['test/spec/{,*/}*.js'],
+        files: ['test/spec/**/*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
@@ -61,7 +61,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.app %>/views/{,*/}*.html',
         ]
-      }
+      },
     },
 
     // The actual grunt server settings
@@ -90,7 +90,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9001,
+          port: 9002,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -358,12 +358,14 @@ module.exports = function (grunt) {
 
     'gh-pages' : {
       options: {
-        base: 'dist'
+        base: 'dist',
+        repo: 'git@github.com:nachinius/arkhamHelper.git'
       },
       src: ['**']
     }
   });
 
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {

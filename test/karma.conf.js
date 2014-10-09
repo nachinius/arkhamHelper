@@ -26,6 +26,12 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
+      'bower_components/underscore/underscore.js',
+      'bower_components/angular-underscore-module/angular-underscore-module.js',
+      'bower_components/jquery/dist/jquery.js',
+      'bower_components/jquery-ui/jquery-ui.js',
+      'bower_components/angular-ui-sortable/sortable.js',
+      'bower_components/angular-shuffler/shuffler.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'
@@ -46,6 +52,7 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
+      //'Chrome',
       'PhantomJS'
     ],
 
@@ -63,13 +70,14 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
+    //logLevel: config.LOG_INFO,
     logLevel: config.LOG_INFO,
 
     // Uncomment the following lines if you are using grunt's server to run the tests
-    // proxies: {
-    //   '/': 'http://localhost:9000/'
-    // },
+    //proxies: {
+    //   '/': 'http://localhost:9001/'
+    //},
     // URL root prevent conflicts with the site root
-    // urlRoot: '_karma_'
+    //urlRoot: '_karma_'
   });
 };

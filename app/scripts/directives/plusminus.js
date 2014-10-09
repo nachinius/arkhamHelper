@@ -22,13 +22,13 @@ angular.module('arkhamHelperApp').directive(
         link: function(scope, element, attributes) {
           scope.plus = function() {
             scope.value = scope.value + 1;
-          }
+          };
           scope.minus = function() {
             if(scope.value <= 0) {
               return;
             }
             scope.value = scope.value - 1;
-          }
+          };
           element.children().addClass(scope.size);
         }
       };
