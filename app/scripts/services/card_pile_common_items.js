@@ -25,7 +25,8 @@ angular.module('arkhamHelperApp')
       }
     });
     
-    pile.shuffle();
+    // my granmother always told to shuffle decks 7 times :)
+    pile.shuffle(7);
 
     return pile;
   });

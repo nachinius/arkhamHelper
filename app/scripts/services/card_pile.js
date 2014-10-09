@@ -46,8 +46,14 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler) {
      */
     that.push = that.add;
     
-    that.shuffle = function() {
-      Shuffler(that.list);
+    /**
+     * @param {integer} n amount of times to shuffle
+     */
+    that.shuffle = function(n) {
+      n = n | 1;
+      while(n-- > 0) {
+        Shuffler(that.list);
+      }
     };
   };
   
