@@ -17,14 +17,18 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler) {
     that.add =  function(card) {
       that.list.push(card);
     };
+    that.findByName = function(name) {
+      var found = _.find(that.list, function(card) {
+        return card.name == name;
+      });
+      return found;
+    };
     /**
      * find the first card given the 'name' and
      * remove from the deck
      */
     that.removeByName = function(name) {
-      var found = _.find(that.list, function(card) {
-        return card.name == name;
-      });
+      var found = that.findByName(name);
       if (found) {
         that.list.splice(_.indexOf(that.list, found), 1);
         return found;

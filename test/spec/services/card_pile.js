@@ -21,7 +21,7 @@ describe('Service: cardPile', function () {
     expect(!!cardPile).toBe(true);
   });
 
-  it('.add(ele): should add a card', function() {
+  it('.add(ele): should add a card to the pile', function() {
     cardPile.add(cards[0]);
     
     expect(cardPile.list).toContain(cards[0]);

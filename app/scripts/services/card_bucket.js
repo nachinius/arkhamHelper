@@ -5,7 +5,7 @@
  * @name arkhamHelperApp.cardBucket
  * @description
  * # cardBucket
- * Factory in the arkhamHelperApp.
+ * Factory of cardBucket.
  */
 angular.module('arkhamHelperApp')
   .factory('cardBucket', function (cardPile) {
@@ -13,12 +13,20 @@ angular.module('arkhamHelperApp')
 
     /**
      * @param {string}
-     * @param {cardPile instance} to which return cards
+     * @param {cardPile} pile external cardPile source
+     * of drawn cards, and destination of droped cards.
      */
-    var cardBucket = function(type, pile) {
+    var cardBucket = function(type, externalPile) {
       // leverage methods of cardPile
       this.cardPile = cardPile();
       this.list = this.cardPile.list;
+
+      this.type = type;
+      this.externalPile = externalPile;
+
+      /**
+       * add a card to the bucket
+       */
       this.add = this.cardPile.add;
       
       /**
@@ -27,15 +35,28 @@ angular.module('arkhamHelperApp')
        */
       this.discard = function(name) {
         var card = this.cardPile.removeByName(name);
-        this.pile.push(card);
+        this.externalPile.push(card);
       }
-      this.getCardFromGamePile = function() {
-        var card = this.pile.draw();
-        this.add(card);
-        return card;
+      /**
+       * find the first card in the bucket that has the name
+       */
+      this.findByName = function(name) {
+        var found = this.cardPile.findByName(name);
+        return found;
       }
-      this.type = type;
-      this.pile = pile;
+      /**
+       * get a card from the external pile
+       */
+      this.draw = function() {
+        var card = this.externalPile.draw();
+        // external pile may be empy
+        if(card) {
+          this.add(card);
+          return card;
+        } else {
+          return null;
+        }
+      }
       return this;
     };
     
