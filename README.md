@@ -1,6 +1,6 @@
 
 
-arkhamHelper [![Build Status](https://secure.travis-ci.org/nachinius/arkhamHelper.png?branch=master)](https://travis-ci.org/nachinius/arkhamHelper)
+arkhamHelper [![Build Status](https://travis-ci.org/nachinius/arkhamHelper.svg?branch=master)](https://travis-ci.org/nachinius/arkhamHelper)
 ============
 
 See it live at http://nachinius.github.io/arkhamHelper/#/
