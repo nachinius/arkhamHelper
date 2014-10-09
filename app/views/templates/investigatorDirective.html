@@ -58,7 +58,7 @@
 			 <div class="row"><img class="" width="100px" ng-src="images/arkham/common_items/{{card.image}}"></img></div>
        <div class="row"><button ng-click="inv.commonCards.discard(card.name)">Remove</button></div>
      </div>
-		<button ng-click="inv.commonCards.draw()">Add Card</button>
+		<button ng-click="inv.commonCards.draw()">Draw Common Item</button>
 	</div>
 	<div class="row cards">
     <h4>Spells</h4>
@@ -66,7 +66,15 @@
        <div class="row"><img class="" width="100px" ng-src="images/arkham/spells/{{card.image}}.png"></img></div>
        <div class="row">{{card.name}}<button ng-click="inv.spellCards.discard(card.name)">Remove</button></div>
      </div>
-    <button ng-click="inv.spellCards.draw()">Add Card</button>
+    <button ng-click="inv.spellCards.draw()">Draw Spell</button>
+  </div>
+  <div class="row cards">
+    </ul>
+     <li  ng-repeat="card in inv.skillsCards.list">{{card.name}}.<span> {{card.text}}</span>
+       <a href="" ng-click="inv.skillsCards.discard(card.name)">Discard</a>
+     </li>
+    <ul>
+    <button ng-click="inv.skillsCards.draw()">Draw Skill</button>
   </div>
 <hr>
 </div>
