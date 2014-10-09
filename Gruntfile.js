@@ -359,7 +359,7 @@ module.exports = function (grunt) {
     'gh-pages' : {
       options: {
         base: 'dist',
-        repo: 'github'
+        repo: 'git@github.com:nachinius/arkhamHelper.git'
       },
       src: ['**']
     }
