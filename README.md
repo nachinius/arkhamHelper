@@ -1,6 +1,8 @@
 arkhamHelper
 ============
 
+See it live at http://nachinius.github.io/arkhamHelper/#/
+
 Helper to play the arkham horror game board.
 
 ## Purpose
