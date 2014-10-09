@@ -4,11 +4,11 @@
 	<div class="row head">
 		<div class="col-xs-6">
 			<div ng-show="inv.name == first.name" class="col-xs-5 pull-left">
-				<img height="50px" ng-src="/images/arkham/FirstInvestigator.png" />
+				<img height="50px" ng-src="images/arkham/FirstInvestigator.png" />
 			</div>
 			<div class="col-xs-5">
 				<img height="100px" width="100px"
-					ng-src="/images/arkham/investigators/{{ inv.image }}" />
+					ng-src="images/arkham/investigators/{{ inv.image }}" />
 			</div>
 
 		</div>
@@ -56,7 +56,7 @@
 		<h4>Common Items</h4>
 		<ul>
 			<li class="col-xs-3" ng-repeat="card in inv.commonCards.list">
-			 <div class="row"><img class="" width="80%" ng-src="/images/arkham/common_items/{{card.image}}"></img></div>
+			 <div class="row"><img class="" width="80%" ng-src="images/arkham/common_items/{{card.image}}"></img></div>
 			 <div class="row">{{ card.name }}<button ng-click="inv.commonCards.discard(card.name)">Remove</button></div>
 			</li>
 		</ul>
