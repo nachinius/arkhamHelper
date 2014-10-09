@@ -54,10 +54,13 @@
 	</div>
 	<div class="row cards">
 		<h4>Common Items</h4>
-		<ol>
-			<li ng-repeat="card in inv.commonCards.list">{{card.name}}</li>
-		</ol>
-		<button>Add Card</button>
+		<ul>
+			<li class="col-xs-3" ng-repeat="card in inv.commonCards.list">
+			 <div class="row"><img class="" width="80%" ng-src="/images/arkham/common_items/{{card.image}}"></img></div>
+			 <div class="row">{{ card.name }}<button ng-click="inv.commonCards.discard(card.name)">Remove</button></div>
+			</li>
+		</ul>
+		<button ng-click="inv.commonCards.getCardFromGamePile()">Add Card</button>
 	</div>
 <hr>
 </div>

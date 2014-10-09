@@ -8,7 +8,7 @@ describe('Service: cardPile', function () {
   // instantiate service
   var cardPile, cards;
   beforeEach(inject(function (_cardPile_) {
-    cardPile = _cardPile_;
+    cardPile = _cardPile_();
     cards = [
       {name: 'myName'},
       {name: 'mySecondCard'}, 

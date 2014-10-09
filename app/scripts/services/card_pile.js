@@ -11,41 +11,43 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler) {
   // Service logic
   // ...
   
-  var list = [];
-  
-  // Public API here
-  return {
-    list : list,
-    add : function(card) {
-      list.push(card);
-    },
+  var cardPile = function() {
+    var that = this;
+    that.list = [];
+    that.add =  function(card) {
+      that.list.push(card);
+    };
     /**
      * find the first card given the 'name' and
      * remove from the deck
      */
-    removeByName : function(name) {
-      var found = _.find(list, function(card) {
+    that.removeByName = function(name) {
+      var found = _.find(that.list, function(card) {
         return card.name == name;
       });
       if (found) {
-        list.splice(_.indexOf(list, found), 1);
-        return true;
+        that.list.splice(_.indexOf(that.list, found), 1);
+        return found;
       }
-    },
+    };
     /**
      * get one card from the top
      */
-    draw : function() {
-      return list.shift();
-    },
+    that.draw = function() {
+      return that.list.shift();
+    };
+    
     /**
      * put one card at the bottom of the pile
      */
-    push: function(card) {
-      list.push(card);
-    },
-    shuffle: function() {
-      Shuffler(list);
-    }
+    that.push = that.add;
+    
+    that.shuffle = function() {
+      Shuffler(that.list);
+    };
   };
+  
+  return function Factory() {
+    return new cardPile();
+  }
 });

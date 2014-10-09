@@ -17,12 +17,12 @@ angular.module('arkhamHelperApp')
 
     this.add = function(inv) {
       // set card bucket list
-      inv.commonCards = cardBucket('commonItems');
+      inv.commonCards = cardBucket('commonItems', cardPileCommonItems);
       
       var card = cardPileCommonItems.draw();
       inv.commonCards.list.push(card);
       
-      var card = cardPileCommonItems.draw();
+      card = cardPileCommonItems.draw();
       inv.commonCards.list.push(card);
       
       inv.inUse = true;
