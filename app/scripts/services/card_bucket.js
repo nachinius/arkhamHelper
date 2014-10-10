@@ -35,7 +35,22 @@ angular.module('arkhamHelperApp')
        */
       this.discard = function(name) {
         var card = this.cardPile.removeByName(name);
+        card.exhaust = false;
         this.externalPile.push(card);
+      }
+
+      /**
+       * Exhaust the card. Which means can not be reused
+       * during the turn. 
+       */
+      this.exhaust = function(card) {
+        card.exhaust = true;
+      }
+      /**
+       * Restore the status of an exhausted card
+       */
+      this.restore = function(card) {
+        card.exhaust = false;
       }
       /**
        * find the first card in the bucket that has the name

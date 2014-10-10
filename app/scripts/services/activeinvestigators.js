@@ -12,7 +12,8 @@ angular.module('arkhamHelperApp')
       cardBucket,
       cardPileCommonItems,
       cardPileSpells,
-      cardPileSkills) {
+      cardPileSkills,
+      cardPileUnique) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     
     this.list = [];
@@ -36,6 +37,11 @@ angular.module('arkhamHelperApp')
       inv.skillsCards.draw();
       inv.skillsCards.draw();
       
+      // set skills
+      inv.uniqueCards = cardBucket('uniqueCards', cardPileUnique);
+      inv.uniqueCards.draw();
+      inv.uniqueCards.draw();
+
       inv.inUse = true;
       this.list.push(inv);
     }
