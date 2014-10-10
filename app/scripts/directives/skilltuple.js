@@ -15,7 +15,8 @@ angular.module('arkhamHelperApp')
       scope: {
         first: '@',
         second: '@',
-        inv: '='
+        inv: '=',
+        availableFocus: '='
       },
       link: function postLink(scope, element, attrs) {
         // keep which one has been selected
@@ -28,6 +29,12 @@ angular.module('arkhamHelperApp')
         
         // on change
         scope.select = function(x) {
+          var change = Math.abs(scope.selected-x);
+          if(change > scope.availableFocus) {
+            return;
+          } else {
+            scope.availableFocus = scope.availableFocus - change; 
+          }
           inv['cur'+first] = inv['min'+first]+x;
           scope.selected = x;
         }

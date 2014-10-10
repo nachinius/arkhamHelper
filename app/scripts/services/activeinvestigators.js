@@ -41,6 +41,8 @@ angular.module('arkhamHelperApp')
       inv.uniqueCards = cardBucket('uniqueCards', cardPileUnique);
       inv.uniqueCards.draw();
       inv.uniqueCards.draw();
+      
+      inv.availableFocus = inv.focus;
 
       inv.inUse = true;
       this.list.push(inv);
