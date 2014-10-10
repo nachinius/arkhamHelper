@@ -122,18 +122,32 @@ span.small {
 	font-size: 0.85em;
 }
 
+.phaseCtrl {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 70px;
+  height: 150px;
+  background: white;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
 /**
  * investigator 
  */
 .investigator-page .investigator-list-container {
-height: 600px;
-overflow-y: scroll;
-overflow-x: hidden;
+  /*height: 600px;*/
+  top: 100px;
+  width: 100%;
+  overflow-y: scroll;
 }
 .investigator-page .investigator-list-container .investigator {
- margin-top: 5px;
- margin-bottom: 5px;
- padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
 }
 
 /**
