@@ -125,13 +125,27 @@ span.small {
 /**
  * investigator 
  */
- .investigator-page .investigator-list-container {
-  height: 600px;
-  overflow-y: scroll;
-  overflow-x: hidden;
- }
- .investigator-page .investigator-list-container .investigator {
-   margin-top: 5px;
-   margin-bottom: 5px;
-   padding: 10px;
- }
+.investigator-page .investigator-list-container {
+height: 600px;
+overflow-y: scroll;
+overflow-x: hidden;
+}
+.investigator-page .investigator-list-container .investigator {
+ margin-top: 5px;
+ margin-bottom: 5px;
+ padding: 10px;
+}
+
+/**
+ * grey out exhausted card
+ */
+.investigator .card-exhausted wrapper-img {
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* msie */
+  background-color: #000;
+}
+.investigator .card-exhausted img {
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* msie */
+}
+
