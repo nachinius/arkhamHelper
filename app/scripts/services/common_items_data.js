@@ -14,55 +14,55 @@ angular.module('arkhamHelperApp').constant('commonItemsData', [
       name : '.18 Derringer',
       price : 3,
       hands : 1,
-      image : '18Derringer.png',
+      image : '18Derringer',
       quantity : 2
     }, {
       name : '.38 revolver',
       price : 4,
       hands : 1,
-      image : '38Revolver.png',
+      image : '38Revolver',
       quantity : 2
     }, {
       name : '.45 automatic',
       price : 5,
       hands : 1,
-      image : '45Automatic.png',
+      image : '45Automatic',
       quantity : 2
     }, {
       name : 'Bullwhip',
       price : 5,
       hands : 1,
-      image : 'Bullwhip.png',
+      image : 'Bullwhip',
       quantity : 2
     }, {
       name : 'Dynamite',
       price : 5,
       hands : 1,
-      image : 'Dynamite.png',
+      image : 'Dynamite',
       quantity : 2
     }, {
       name : 'MapOfArkham',
       price : 5,
       hands : 1,
-      image : 'MapOfArkham.png',
+      image : 'MapOfArkham',
       quantity : 2
     }, {
       name : 'Shotgun',
       price : 5,
       hands : 1,
-      image : 'Shotgun.png',
+      image : 'Shotgun',
       quantity : 2
     }, {
       name : 'CavalrySaber',
       price : 5,
       hands : 1,
-      image : 'CavalrySaber.png',
+      image : 'CavalrySaber',
       quantity : 2
     }, {
       name : 'Food',
       price : 5,
       hands : 1,
-      image : 'Food.png',
+      image : 'Food',
       quantity : 2
     }
 
@@ -70,79 +70,79 @@ angular.module('arkhamHelperApp').constant('commonItemsData', [
       name : 'Motorcycle',
       price : 5,
       hands : 1,
-      image : 'Motorcycle.png',
+      image : 'Motorcycle',
       quantity : 2
     }, {
       name : 'TommyGun',
       price : 5,
       hands : 1,
-      image : 'TommyGun.png',
+      image : 'TommyGun',
       quantity : 2
     }, {
       name : 'Knife',
       price : 5,
       hands : 1,
-      image : 'Knife.png',
+      image : 'Knife',
       quantity : 2
     }, {
       name : 'OldJournal',
       price : 5,
       hands : 1,
-      image : 'OldJournal.png',
+      image : 'OldJournal',
       quantity : 2
     }, {
       name : 'Whiskey',
       price : 5,
       hands : 1,
-      image : 'Whiskey.png',
+      image : 'Whiskey',
       quantity : 2
     }, {
       name : 'AncientTome',
       price : 5,
       hands : 1,
-      image : 'AncientTome.png',
+      image : 'AncientTome',
       quantity : 2
     }, {
       name : 'Cross',
       price : 5,
       hands : 1,
-      image : 'Cross.png',
+      image : 'Cross',
       quantity : 2
     }, {
       name : 'Lantern',
       price : 5,
       hands : 1,
-      image : 'Lantern.png',
+      image : 'Lantern',
       quantity : 2
     }, {
       name : 'ResearchMaterials',
       price : 5,
       hands : 1,
-      image : 'ResearchMaterials.png',
+      image : 'ResearchMaterials',
       quantity : 2
     }, {
       name : 'Axe',
       price : 5,
       hands : 1,
-      image : 'Axe.png',
+      image : 'Axe',
       quantity : 2
     }, {
       name : 'DarkCloak',
       price : 5,
       hands : 1,
-      image : 'DarkCloak.png',
+      image : 'DarkCloak',
       quantity : 2
     }, {
       name : 'LuckyCigaretteCase',
       price : 5,
       hands : 1,
-      image : 'LuckyCigaretteCase.png',
+      image : 'LuckyCigaretteCase',
       quantity : 2
     }, {
       name : 'Rifle',
       price : 5,
       hands : 1,
-      image : 'Rifle.png',
+      image : 'Rifle',
       quantity : 2
     }
 ]);

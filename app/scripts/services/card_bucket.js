@@ -22,6 +22,14 @@ angular.module('arkhamHelperApp')
       this.list = this.cardPile.list;
 
       this.type = type;
+      
+      this.name = type.replace(/^[a-z]|[A-Z]/g, function(match,offset) {
+        return offset === 0 ? match.toUpperCase() : " " + match;
+      });
+      this.imgSubDir = type.replace(/[A-Z]/g,function(match) {
+        return '_'+match.toLowerCase();
+      }); 
+       
       this.externalPile = externalPile;
 
       /**
