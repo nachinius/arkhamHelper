@@ -22,6 +22,7 @@ angular.module('arkhamHelperApp').directive(
         },
         link: function(scope, element, attributes) {
           
+          // if there is max, enforced when reduces its value
           if(angular.isDefined(scope.max)) {
             scope.$watch('max', function(newValue, oldValue) {
               if(newValue < oldValue && scope.value > newValue) {
@@ -36,6 +37,7 @@ angular.module('arkhamHelperApp').directive(
             }
             scope.value = scope.value + 1;
           };
+          
           scope.minus = function() {
             if(scope.value <= 0) {
               return;

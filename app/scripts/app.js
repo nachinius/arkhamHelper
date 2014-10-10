@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'underscore',
     'ui.sortable',
-    'Shuffler'
+    'Shuffler',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
