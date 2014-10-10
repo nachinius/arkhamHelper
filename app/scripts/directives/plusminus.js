@@ -17,10 +17,23 @@ angular.module('arkhamHelperApp').directive(
         scope : {
           value: '=',
           size: '@',
-          show: '@'
+          show: '@',
+          max: '=?'
         },
         link: function(scope, element, attributes) {
+          
+          if(angular.isDefined(scope.max)) {
+            scope.$watch('max', function(newValue, oldValue) {
+              if(newValue < oldValue && scope.value > newValue) {
+                scope.value = newValue;
+              }
+            });
+          }
+          
           scope.plus = function() {
+            if(angular.isDefined(scope.max) && scope.value >= scope.max) {
+                return;
+            }
             scope.value = scope.value + 1;
           };
           scope.minus = function() {

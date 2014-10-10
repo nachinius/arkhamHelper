@@ -16,9 +16,7 @@ angular.module('arkhamHelperApp')
     // add cards to the piles
     angular.forEach(uniqueItemsData, function(ele) {
       ele.image = ele.name;
-      console.log(ele.image);
       ele.image = ele.image.replace(/ (.)/g, function(match, group1) {
-        console.log(group1, match)
         return group1.trim().toUpperCase();
       }).replace(/[ '-]/g,'');
       for(var i=ele.quantity;i>0;i--) {
