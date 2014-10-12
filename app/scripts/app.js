@@ -39,6 +39,10 @@ angular
         templateUrl: 'views/settings.html',
         controller: 'SettingsCtrl'
       })
+      .when('/mini-card/:type/:id', {
+        templateUrl: 'views/miniCards.html',
+        controller: 'miniCardCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
