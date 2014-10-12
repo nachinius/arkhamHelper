@@ -7,16 +7,27 @@
  * # cardPile
  * Factory in the arkhamHelperApp.
  */
-angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler) {
+angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
   // Service logic
   // ...
   
   var cardPile = function() {
     var that = this;
     that.list = [];
+    that.lastId = 0;
     that.add =  function(card) {
-      that.list.push(card);
+      if(angular.isUndefined(card.id)) {
+        that.lastId = that.lastId + 1;
+        card.id = that.lastId;
+      }
+      that.push(card);
     };
+    that.find = function(id) {
+      var found = _.find(that.list, function(card) {
+        return card.id = id;
+      });
+      return found;
+    }
     that.findByName = function(name) {
       var found = _.find(that.list, function(card) {
         return card.name == name;
@@ -44,7 +55,9 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler) {
     /**
      * put one card at the bottom of the pile
      */
-    that.push = that.add;
+    that.push = function(card) {
+      that.list.push(card);
+    }
     
     /**
      * @param {integer} n amount of times to shuffle

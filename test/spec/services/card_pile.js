@@ -32,8 +32,30 @@ describe('Service: cardPile', function () {
     cardPile.add(cards[0]);
     
     expect(cardPile.list.length).toBe(2);
-  })
+  });
   
+  it('.add(ele) should create an id for the card if it does not have it', function() {
+    cardPile.add(cards[0]);
+    var card = cardPile.draw();
+    
+    expect(card.id).toBeDefined();
+    
+    
+    
+  });
+  
+  it('.add(ele) should not rewrite id for the card that has it', function() {
+    cardPile.add(cards[0]);
+    var card = cardPile.draw();
+    var id = card.id;
+    // now should have it, adding back
+    cardPile.add(card);
+    
+    // getting it out
+    var card = cardPile.draw();
+    
+    expect(card.id).toEqual(id);
+  });
   
   it('.removeByName(name) should remove a card from the list', function() {
     
@@ -132,5 +154,25 @@ describe('Service: cardPile', function () {
     expect(cardPile.list.length).toBe(origLength);
   });
   
+  it('find() should find a card by id', function() {
+    
+    cardPile.add(cards[0]);
+    cardPile.add(cards[1]);
+    cardPile.add(cards[2]);
+    
+    // get a card
+    var card = cardPile.draw();
+    // copy it, to know which card was
+    var copiedCard = angular.copy(card);
+    
+    // readd the card and shuffle
+    cardPile.add(card);
+    cardPile.shuffle();
+    
+    // now, try to find it only by using its ID
+    var foundCard = cardPile.find(copiedCard.id);
+    
+    expect(foundCard).toEqual(card);
+  });
   
 });
