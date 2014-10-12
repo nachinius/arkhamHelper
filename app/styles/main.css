@@ -132,7 +132,7 @@ span.small {
   padding-left: 50px;
   padding-right: 20px;
   padding-bottom: 10px;
-  padding-top: 10px;
+  padding-top: 25px;
   z-index: 1030;
 }
 
@@ -140,10 +140,9 @@ span.small {
  * investigator 
  */
 .investigator-page .investigator-list-container {
-  /*height: 600px;*/
-  top: 100px;
   width: 100%;
   overflow-y: scroll;
+  padding: 50px;
 }
 .investigator-page .investigator-list-container .investigator {
   margin-top: 5px;
@@ -154,13 +153,35 @@ span.small {
 /**
  * grey out exhausted card
  */
+div.modal-card .card-exhausted wrapper-img ,
 .investigator .card-exhausted wrapper-img {
   opacity: 0.4;
   filter: alpha(opacity=40); /* msie */
   background-color: #000;
 }
+div.modal-card .card-exhausted img ,
 .investigator .card-exhausted img {
   opacity: 0.4;
   filter: alpha(opacity=40); /* msie */
 }
+div.modal-card .card-type {
+	font-size: 1.3em;
+	font-weight: 120;
+} 
+div.modal-card .card-name {
+  font-size: 1.5em;
+  font-weight: 140;
+} 
+div.modal-card .card-buttons > div {
+	padding: 10px;
+}
 
+.modal.fade {
+  opacity: 1;
+}
+
+.modal.fade .modal-dialog, .modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
