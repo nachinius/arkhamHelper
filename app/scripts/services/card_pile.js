@@ -11,7 +11,7 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
   // Service logic
   // ...
   
-  var cardPile = function() {
+  var cardPile = function(type) {
     var that = this;
     that.list = [];
     that.lastId = 0;
@@ -68,9 +68,27 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
         Shuffler(that.list);
       }
     };
+    
+    if(angular.isUndefined(type)) {
+      type = '';
+    }
+    /**
+     * in: camelCase
+     * out: Camel Case
+     */
+    this.name = type.replace(/^[a-z]|[A-Z]/g, function(match,offset) {
+      return offset === 0 ? match.toUpperCase() : " " + match;
+    });
+    /**
+     * in: camelCase
+     * out: camel_case
+     */
+    this.imgSubDir = type.replace(/[A-Z]/g,function(match) {
+      return '_'+match.toLowerCase();
+    });
   };
   
-  return function Factory() {
-    return new cardPile();
+  return function Factory(type) {
+    return new cardPile(type);
   }
 });

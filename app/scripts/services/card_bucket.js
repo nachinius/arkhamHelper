@@ -23,14 +23,10 @@ angular.module('arkhamHelperApp')
 
       this.type = type;
       
-      this.name = type.replace(/^[a-z]|[A-Z]/g, function(match,offset) {
-        return offset === 0 ? match.toUpperCase() : " " + match;
-      });
-      this.imgSubDir = type.replace(/[A-Z]/g,function(match) {
-        return '_'+match.toLowerCase();
-      }); 
-       
       this.externalPile = externalPile;
+      this.name = externalPile.name;
+      this.type = externalPile.type;
+      this.imgSubDir = externalPile.imgSubDir;
 
       /**
        * add a card to the bucket

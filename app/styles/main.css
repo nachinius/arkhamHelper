@@ -150,38 +150,16 @@ span.small {
   padding: 10px;
 }
 
-/**
- * grey out exhausted card
- */
-div.modal-card .card-exhausted wrapper-img ,
-.investigator .card-exhausted wrapper-img {
-  opacity: 0.4;
-  filter: alpha(opacity=40); /* msie */
-  background-color: #000;
-}
-div.modal-card .card-exhausted img ,
-.investigator .card-exhausted img {
-  opacity: 0.4;
-  filter: alpha(opacity=40); /* msie */
-}
-div.modal-card .card-type {
-	font-size: 1.3em;
-	font-weight: 120;
-} 
-div.modal-card .card-name {
-  font-size: 1.5em;
-  font-weight: 140;
-} 
-div.modal-card .card-buttons > div {
-	padding: 10px;
+
+
+.mini-card-options  {
+	position: fixed;
+	top: 100px;
+	left: 100px;
+	width: 600px;
+	height: 400px;
+	background: white;
+	z-index: 1000;
+	border: 1px darkblue double;
 }
 
-.modal.fade {
-  opacity: 1;
-}
-
-.modal.fade .modal-dialog, .modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-}

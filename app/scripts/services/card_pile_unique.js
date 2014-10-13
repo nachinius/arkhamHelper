@@ -10,7 +10,7 @@
 angular.module('arkhamHelperApp')
   .service('cardPileUnique', function cardPileUnique(cardPile, uniqueItemsData) {
     
-    var pile = cardPile();
+    var pile = cardPile('uniqueItems');
     var newCard;
     
     // add cards to the piles

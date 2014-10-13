@@ -10,7 +10,7 @@
 angular.module('arkhamHelperApp')
   .service('cardPileCommonItems', function cardPileCommonItems(cardPile, commonItemsData) {
     
-    var pile = cardPile();
+    var pile = cardPile('commonItems');
     var newCard;
     
     // add cards to the piles
