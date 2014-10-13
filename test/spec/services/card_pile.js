@@ -167,7 +167,6 @@ describe('Service: cardPile', function () {
     
     // readd the card and shuffle
     cardPile.add(card);
-    cardPile.shuffle();
     
     // now, try to find it only by using its ID
     var foundCard = cardPile.find(copiedCard.id);

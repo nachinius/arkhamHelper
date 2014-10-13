@@ -24,7 +24,7 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
     };
     that.find = function(id) {
       var found = _.find(that.list, function(card) {
-        return card.id = id;
+        return card.id == id;
       });
       return found;
     }
