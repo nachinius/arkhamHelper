@@ -17,10 +17,14 @@ angular.module('arkhamHelperApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
     
     this.list = [];
-
+    this.lastId = 0;
     this.add = function(inv) {
       
       // @TODO check the inv starting sheet to add items
+      
+      // put an id to each investigator
+      this.lastId++;
+      inv.id = this.lastId;
       
       // set common card on inv
       inv.commonItems = cardBucket('commonItems', cardPileCommonItems);

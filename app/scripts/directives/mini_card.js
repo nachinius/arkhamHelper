@@ -7,15 +7,15 @@
  * # miniCard
  */
 angular.module('arkhamHelperApp')
-  .directive('miniCard', function () {
+  .directive('miniCard', function ($location) {
     return {
       templateUrl: 'views/templates/miniCardDirective.html',
       restrict: 'E',
       scope: {
-        cards : '='
+        cards : '=',
       },
       link: function postLink(scope, element, attrs) {
-        
       }
     };
   });
+

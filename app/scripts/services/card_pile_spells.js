@@ -10,7 +10,7 @@
 angular.module('arkhamHelperApp')
   .service('cardPileSpells', function cardPileSpells(cardPile, spellItemsData) {
     
-    var pile = cardPile();
+    var pile = cardPile('spells');
     var newCard;
     
     // add cards to the piles
