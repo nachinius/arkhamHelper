@@ -150,7 +150,21 @@ span.small {
   padding: 10px;
 }
 
+.investigator .card-exhausted wrapper-img {
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* msie */
+  background-color: #000;
+}
 
+.investigator .card-exhausted img {
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* msie */
+}
+
+.mini-card-options .card-type {
+	font-size: 1.5em;
+	font-weight: 140;
+}
 
 .mini-card-options  {
 	position: fixed;
