@@ -11,8 +11,6 @@ describe('Service: locationsData', function () {
     locationsData = _locationsData_;
   }));
 
-  it('should do something', function () {
-    expect(!!locationsData).toBe(true);
-  });
+  it('should do something');
 
 });
