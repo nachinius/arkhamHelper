@@ -35,5 +35,4 @@ angular.module('arkhamHelperApp')
 		  $scope.clicked.selected[location.name] = true;
 		  $scope.choosen[location.name] = choosen;
 	  }
-	  console.log($scope.locationsNeighborhood);
   });

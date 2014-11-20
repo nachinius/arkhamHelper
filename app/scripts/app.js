@@ -34,7 +34,7 @@ angular.module(
 }).run(
 		[ '$rootScope', '$location', '$window',
 				function($rootScope, $location, $window) {
-					$rootScope.$on('$stateChangeSuccess', function(event) {
+					$rootScope.$on('$locationChangeSuccess', function(event) {
 
 						if (!$window.ga)
 							return;
