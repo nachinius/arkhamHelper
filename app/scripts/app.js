@@ -39,6 +39,10 @@ angular
         templateUrl: 'views/settings.html',
         controller: 'SettingsCtrl'
       })
+      .when('/arkham_encounters', {
+        templateUrl: 'views/arkham_encounters.html',
+        controller: 'ArkhamEncountersCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

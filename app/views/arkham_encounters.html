@@ -1,0 +1,14 @@
+<div class="encounters-page"> Encounters Page
+<div class="neighbor wrapper" ng-repeat="neighbor in neighborhoods">
+	<div class="neighbor title">{{ neighbor }}</div>
+	<div class="location wrapper" ng-repeat="location in locationsNeighborhood[neighbor].list">
+		<div class="location name">{{ location.name }}</div>
+		<div class="location special-encounter" ng-show="location.special_encounter">{{location.special_encounter}}</div>
+		<div class="location encounters">
+			<button ng-hide="clicked.selected[location.name]" type="button" class="btn btn-info" ng-click="drawEncounter(location)">Draw Encounter</button>
+			<button ng-show="clicked.selected[location.name]" type="button" class="btn btn-warning" ng-click="resetClicked(location)">Reset</button>
+			<div ng-show="clicked.selected[location.name]">{{ location.encounters[choosen[location.name]].text }}</div>
+		</div>
+	</div>
+</div>
+</div>
