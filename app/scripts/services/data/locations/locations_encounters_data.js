@@ -748,4 +748,4 @@ angular.module('arkhamHelperApp').constant('locationsEncounterData',
   ],
   "special_encounter": "Magic Lessons: Instead of having an encounter here, you may pay $5 to draw 2 Spells. Keep one of them and discard the other."
  }
-]
+]);
