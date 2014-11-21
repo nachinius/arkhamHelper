@@ -5,9 +5,12 @@
 		<div class="location name">{{ location.name }}</div>
 		<div class="location special-encounter" ng-show="location.special_encounter">{{location.special_encounter}}</div>
 		<div class="location encounters">
-			<button ng-hide="clicked.selected[location.name]" type="button" class="btn btn-info" ng-click="drawEncounter(location)">Draw Encounter</button>
-			<button ng-show="clicked.selected[location.name]" type="button" class="btn btn-warning" ng-click="resetClicked(location)">Reset</button>
-			<div ng-show="clicked.selected[location.name]">{{ location.encounters[choosen[location.name]].text }}</div>
+			<button type="button" class="btn btn-info" ng-click="drawEncounter(location)">Draw Encounter</button>
+			<div ng-repeat="card in clicked[location.name]">
+				<button type="button" class="btn btn-warning" ng-click="resetClicked(location.name, $index)">Reset</button>
+				<div>{{ card.text }}</div>
+			</div>
+			
 		</div>
 	</div>
 </div>
