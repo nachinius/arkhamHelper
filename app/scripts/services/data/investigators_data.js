@@ -476,7 +476,7 @@ angular
               randomPossessions: [
                                   {type: 'common', quantity: 2},
                                   {type: 'skill', quantity: 1},
-                                  {type: 'spells', quantity: 2},
+                                  {type: 'spell', quantity: 2},
                                   ],
               curSanity : 5,
               maxSanity : 5,
@@ -509,7 +509,7 @@ angular
                                 {type: 'blessing'}],
               randomPossessions: [
                                   {type: 'skill', quantity: 1},
-                                  {type: 'spells', quantity: 2},
+                                  {type: 'spell', quantity: 2},
                                   ],
               curSanity : 7,
               maxSanity : 7,
