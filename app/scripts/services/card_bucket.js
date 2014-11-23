@@ -23,6 +23,9 @@ angular.module('arkhamHelperApp')
 
       this.type = type;
       
+      /**
+       * @var cardPile
+       */
       this.externalPile = externalPile;
       this.name = externalPile.name;
       this.type = externalPile.type;
@@ -42,6 +45,16 @@ angular.module('arkhamHelperApp')
         card.exhaust = false;
         this.externalPile.push(card);
       }
+      
+      /**
+       * discard all cards
+       */
+      this.discardAll = function() {
+    	  var that = this;
+    	  this.list.forEach(function(card) {
+    		  that.discard(card.name);
+    	  });
+      };
 
       /**
        * Exhaust the card. Which means can not be reused
@@ -63,6 +76,20 @@ angular.module('arkhamHelperApp')
         var found = this.cardPile.findByName(name);
         return found;
       }
+      
+      /**
+       * Attempt to draw a specific card identified by name
+       */
+      this.drawByName = function(name) {
+    	  var card = this.externalPile.removeByName(name);
+    	  if(card) {
+    		  this.add(card);
+    		  return card;
+    	  } else {
+    		  return null;
+    	  }
+      }
+      
       /**
        * get a card from the external pile
        */

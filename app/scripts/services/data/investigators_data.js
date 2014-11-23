@@ -172,7 +172,7 @@ angular
               randomPossessions: [{type: 'common', quantity: 1},
                                   {type: 'unique', quantity: 1},
                                   {type: 'skill', quantity: 1},
-                                  {type: 'spells', quantity: 2}
+                                  {type: 'spell', quantity: 2}
                                   ],
               curSanity : 5,
               maxSanity : 5,
@@ -202,7 +202,7 @@ angular
               fixedPossesions: [],
               randomPossessions: [{type: 'common', quantity: 2},
                                   {type: 'skill', quantity: 1},
-                                  {type: 'spells', quantity: 2}
+                                  {type: 'spell', quantity: 2}
                                   ],
               curSanity : 6,
               maxSanity : 6,
@@ -232,7 +232,7 @@ angular
               fixedPossesions: [],
               randomPossessions: [{type: 'unique', quantity: 2},
                                   {type: 'skill', quantity: 1},
-                                  {type: 'spells', quantity: 2}
+                                  {type: 'spell', quantity: 2}
                                   ],
               curSanity : 7,
               maxSanity : 7,
@@ -268,7 +268,7 @@ angular
               randomPossessions: [{type: 'common', quantity: 2},
                                   {type: 'unique', quantity: 1},
                                   {type: 'skill', quantity: 1},
-                                  {type: 'spells', quantity: 1}
+                                  {type: 'spell', quantity: 1}
                                   ],
               home : 'Train Station',
               focus : 2,
@@ -331,7 +331,7 @@ angular
               randomPossessions: [{type: 'common', quantity: 1},
                                   {type: 'skill', quantity: 1},
                                   {type: 'unique', quantity: 1},
-                                  {type: 'spells', quantity: 2},
+                                  {type: 'spell', quantity: 2},
                                   ],
               curSanity : 6,
               maxSanity : 6,
@@ -506,7 +506,7 @@ angular
               clues: 0,
               fixedPossesions: [{type: 'common', which: 'Cross'},
                                 {type: 'unique', which: 'Holy Water'},
-                                {type: 'special', which: 'blessing'}],
+                                {type: 'blessing'}],
               randomPossessions: [
                                   {type: 'skill', quantity: 1},
                                   {type: 'spells', quantity: 2},
