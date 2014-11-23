@@ -3,9 +3,8 @@
 /**
  * @ngdoc overview
  * @name arkhamHelperApp
- * @description
- * # arkhamHelperApp
- *
+ * @description # arkhamHelperApp
+ * 
  * Main module of the application.
  */
 angular.module(
@@ -28,6 +27,9 @@ angular.module(
 	}).when('/arkham_encounters', {
 		templateUrl : 'views/arkham_encounters.html',
 		controller : 'ArkhamEncountersCtrl'
+	}).when('/mythos', {
+		templateUrl : 'views/mythos.html',
+		controller : 'MythosCtrl'
 	}).otherwise({
 		redirectTo : '/'
 	});
