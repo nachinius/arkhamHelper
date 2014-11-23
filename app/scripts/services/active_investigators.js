@@ -56,6 +56,7 @@ angular.module('arkhamHelperApp')
         	inv.skillsCards.discardAll();
         	inv.uniqueItems.discardAll();
         }
+        inv.setup = false;
     }
     
     this.setupAll = function(inv) {
@@ -65,6 +66,11 @@ angular.module('arkhamHelperApp')
     
     this.setupInvestigator = function(inv) {
     	var card;
+    	if(inv.setup === true) {
+    		console.log('Investigator '+inv.name+ ' is already set up!');
+    		return;
+    	}
+    	inv.setup = true;
     		inv.fixedPossesions.forEach(function(fixed) {
     			switch (fixed.type) {
     			case 'common':
