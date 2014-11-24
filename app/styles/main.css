@@ -177,3 +177,7 @@ span.small {
 	border: 1px darkblue double;
 }
 
+.mini-card-options .row {
+	padding: 10px;
+}
+

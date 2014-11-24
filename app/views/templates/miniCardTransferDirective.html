@@ -3,6 +3,8 @@
 		class="btn btn-info btn-sm" ng->Transfer</a>
 	<div ng-show="showOptions">
 		<p>Only transfer if you are at the same location</p>
-			<a class="btn btn-info btn-sm" href="" ng-hide="targetInv.name == inv.name" ng-repeat="targetInv in list" ng-click="transfer(targetInv, inv)">{{targetInv.name}}</a>
+		<a class="btn btn-info btn-sm" href="" ng-hide="targetInv.name == inv.name" ng-repeat="targetInv in list" ng-click="transfer(targetInv, inv)">{{targetInv.name}}</a>
+		<a href="" ng-show="showOptions" ng-click="showOptions=!showOptions"
+    class="btn btn-warning btn-sm" ng->Cancel Transfer</a>
 	</div>
 </div>
