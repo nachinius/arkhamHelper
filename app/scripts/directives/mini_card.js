@@ -13,6 +13,8 @@ angular.module('arkhamHelperApp')
       restrict: 'E',
       scope: {
         cards : '=',
+        inv: '=',
+        type: '@'
       },
       link: function postLink(scope, element, attrs) {
         
