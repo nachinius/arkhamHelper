@@ -31,11 +31,12 @@ angular.module('arkhamHelperApp')
       this.lastId++;
       inv.id = this.lastId;
       
+      inv.cards = {}
       // set cards buckets
-      inv.commonItems = cardBucket('commonItems', cardPileCommonItems);
-      inv.spells = cardBucket('spells', cardPileSpells);
-      inv.skillsCards = cardBucket('skills', cardPileSkills);
-      inv.uniqueItems = cardBucket('uniqueItems', cardPileUnique);
+      inv.cards.commonItems = cardBucket('commonItems', cardPileCommonItems);
+      inv.cards.spells = cardBucket('spells', cardPileSpells);
+      inv.cards.skills = cardBucket('skills', cardPileSkills);
+      inv.cards.uniqueItems = cardBucket('uniqueItems', cardPileUnique);
       
       // @TODO allies
       inv.availableFocus = inv.focus;
@@ -51,10 +52,10 @@ angular.module('arkhamHelperApp')
         var index = _.indexOf(inv);
         if(index >= 0) {
         	that.list.splice(that.list.indexOf(inv),1);
-        	inv.commonItems.discardAll();
-        	inv.spells.discardAll();
-        	inv.skillsCards.discardAll();
-        	inv.uniqueItems.discardAll();
+        	inv.cards.commonItems.discardAll();
+        	inv.cards.spells.discardAll();
+        	inv.cards.skills.discardAll();
+        	inv.cards.uniqueItems.discardAll();
         }
         inv.setup = false;
     }
@@ -74,25 +75,25 @@ angular.module('arkhamHelperApp')
     		inv.fixedPossesions.forEach(function(fixed) {
     			switch (fixed.type) {
     			case 'common':
-    				card = inv.commonItems.drawByName(fixed.which);
+    				card = inv.cards.commonItems.drawByName(fixed.which);
     				if(!card) {
     					console.log('missing fixed common items',fixed.which, fixed);
     				}
     				break;
     			case 'unique':
-    				card = inv.uniqueItems.drawByName(fixed.which);
+    				card = inv.cards.uniqueItems.drawByName(fixed.which);
     				if(!card) {
     					console.log('missing fixed unique items',fixed.which, fixed);
     				}
     				break;
     			case 'skill':
-    				card = inv.skillsCards.drawByName(fixed.which);
+    				card = inv.cards.skills.drawByName(fixed.which);
     				if(!card) {
     					console.log('missing fixed unique items',fixed.which, fixed);
     				}
     				break;
     			case 'spell':
-    				card = inv.spells.drawByName(fixed.which);
+    				card = inv.cards.spells.drawByName(fixed.which);
     				if(!card) {
     					console.log('missing fixed unique items',fixed.which, fixed);
     				}
@@ -116,22 +117,22 @@ angular.module('arkhamHelperApp')
     			switch (random.type) {
     			case 'common':
     				for(var i=random.quantity;i>0;i--) {
-    					inv.commonItems.draw();
+    					inv.cards.commonItems.draw();
     				}
     				break;
     			case 'unique':
     				for(var i=random.quantity;i>0;i--) {
-    					inv.uniqueItems.draw();
+    					inv.cards.uniqueItems.draw();
     				}
     				break;
     			case 'skill':
     				for(var i=random.quantity;i>0;i--) {
-    					inv.skillsCards.draw();
+    					inv.cards.skills.draw();
     				}
     				break;
     			case 'spell':
     				for(var i=random.quantity;i>0;i--) {
-    					card = inv.spells.draw();
+    					card = inv.cards.spells.draw();
     				}
     				break;
     			default:
@@ -141,4 +142,7 @@ angular.module('arkhamHelperApp')
     		});
     }
     
+    this.add(investigatorsData[1]);
+    this.add(investigatorsData[2]);
+    this.setupAll();
   });

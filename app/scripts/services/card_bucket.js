@@ -41,9 +41,14 @@ angular.module('arkhamHelperApp')
        * at the bottom
        */
       this.discard = function(name) {
-        var card = this.cardPile.removeByName(name);
+        var card = this.removeByName(name);
         card.exhaust = false;
         this.externalPile.push(card);
+      }
+      
+      this.removeByName = function(name) {
+    	  var card = this.cardPile.removeByName(name);
+    	  return card;
       }
       
       /**
