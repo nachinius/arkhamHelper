@@ -56,6 +56,17 @@
 	<mini-card cards="inv.cards.commonItems" inv="inv" type="common"></mini-card>
 	<mini-card cards="inv.cards.uniqueItems" inv="inv" type="unique"></mini-card>
 	<mini-card cards="inv.cards.spells" inv="inv" type="spell"></mini-card>
+  <div class="row cards allies">
+  	<button ng-click="inv.cards.allies.draw()">Draw Allies</button>
+  	<ul>
+  		<li ng-class="{'card-exhausted': card.exhaust}" ng-repeat="card in inv.cards.allies.list">{{ card.name}}. <span>{{card.text}}</span>
+  		  <span>{{card.info}}</span> {{card}}
+  		  <a href="" ng-click="inv.cards.allies.discard(card.name)">Discard</a>
+  		  <a href="" ng-hide="card.exhaust" ng-click="inv.cards.allies.exhaust(card)">Exhaust</a>
+  		  <a href="" ng-show="card.exhaust" ng-click="inv.cards.allies.restore(card)">Restore</a>
+  		</li>
+  	</ul>
+  </div>
   <div class="row cards">
     <button ng-click="inv.cards.skills.draw()">Draw Skill</button>
     <ul>

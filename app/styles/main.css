@@ -156,6 +156,11 @@ span.small {
   background-color: #000;
 }
 
+.investigator .allies li.card-exhausted {
+	color: red;
+	background-color: #00;
+}
+
 .investigator .card-exhausted img {
   opacity: 0.4;
   filter: alpha(opacity=40); /* msie */

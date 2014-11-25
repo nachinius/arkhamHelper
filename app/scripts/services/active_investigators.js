@@ -13,7 +13,8 @@ angular.module('arkhamHelperApp')
       cardPileCommonItems,
       cardPileSpells,
       cardPileSkills,
-      cardPileUnique) {
+      cardPileUnique,
+      cardPileAllies) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     
 	  /**
@@ -37,6 +38,7 @@ angular.module('arkhamHelperApp')
       inv.cards.spells = cardBucket('spells', cardPileSpells);
       inv.cards.skills = cardBucket('skills', cardPileSkills);
       inv.cards.uniqueItems = cardBucket('uniqueItems', cardPileUnique);
+      inv.cards.allies = cardBucket('allies', cardPileAllies);
       
       // @TODO allies
       inv.availableFocus = inv.focus;
@@ -105,7 +107,7 @@ angular.module('arkhamHelperApp')
     				console.log('adding fixed blessing not implemented', fixed);
     				break;
     			case 'ally':
-    				console.log('adding fixed allies not implemented', fixed);
+    				inv.cards.allies.drawByName(fixed.which);
     				break;
     			default:
     				console.log('adding unknown fixed possesion', fixed);
