@@ -66,5 +66,5 @@ angular.module('arkhamHelperApp').service('mythos',
 			mythosService.old = [];
 			mythosService.oldRumor = [];
 			
-
+			
 		});
