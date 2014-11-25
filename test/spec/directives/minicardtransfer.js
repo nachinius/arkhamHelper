@@ -12,9 +12,5 @@ describe('Directive: miniCardTransfer', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<mini-card-transfer></mini-card-transfer>');
-    element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the miniCardTransfer directive');
-  }));
+  it('should make hidden element visible' );
 });
