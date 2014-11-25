@@ -62,6 +62,13 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
     }
     
     /**
+     * Remove an Ally card from the deck
+     */
+    that.removeAny = function() {
+    	var ally = that.list.shift();
+    	return ally;
+    }
+    /**
      * @param {integer} n amount of times to shuffle
      */
     that.shuffle = function(n) {

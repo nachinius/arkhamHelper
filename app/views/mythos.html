@@ -1,5 +1,11 @@
 <p>This is the mythos view.</p>
 
+<div class="terror-level"><h3>Terror Level</h3>
+	<div><span class="title">Current Level</span>: <span class="level">{{ terrorLevel.value }}</span>
+	<div><a href="" class="btn btn-warning" ng-click="increaseTerror()">Increase Terror</a></div>
+</div>
+
+<h3>Mythos</h3>
 <a class="btn btn-bg btn-success" ng-click="mythos.draw();">Draw a Mythos Card</a>
 
 <div ng-show="mythos.current">
