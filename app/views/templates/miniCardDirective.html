@@ -13,7 +13,7 @@
 
 		<div class="mini-card-options" ng-show="card.details === true">
 			<div class="col-xs-4" ng-class="{'card-exhausted' : card.exhaust}">
-				<div class="wrapper-img" ng-click="card.details = false">
+				<div class="wrapper-img" ng-click="card.details = false;">
 					<img class="" width="250px"
 						ng-src="images/arkham/{{cards.imgSubDir}}/{{card.image}}.png"></img>
 				</div>
@@ -26,22 +26,25 @@
 						<p>{{ card.text}}</p>
 					</div>
 				</div>
-				<div class="row card-buttons">
-					<div class="">
+				<div class="card-buttons">
+					<div class="row">
 						<a class="btn btn-danger btn-xs"
 							ng-click="cards.discard(card.name)">Discard</a>
 					</div>
-					<div class="" ng-hide="!!card.exhaust">
+					<div class="row" ng-hide="!!card.exhaust">
 						<a class="btn btn-warning btn-sm" href=""
 							ng-click="cards.exhaust(card)">Exhaust</a>
 					</div>
-					<div class="" ng-show="!!card.exhaust">
+					<div class="row" ng-show="!!card.exhaust">
 						<a class="btn btn-warning btn-sm" href=""
 							ng-click="cards.restore(card)">Restore</a>
 					</div>
+					<mini-card-transfer class="row" card="card" inv="inv" type="cards.name"></mini-card-transfer>
+					<div class="row">
+					  <a href="" class="btn btn-sm btn-success" ng-click="card.details=false;">Close</a>
+					</div>
 				</div>
 			</div>
-
 		</div>
 
 

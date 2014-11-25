@@ -22,5 +22,17 @@
       </li>
     </ol>
   </div>
+  
+  <div>
+  	<h4>Setup</h4>
+  	<button ng-click="setupAll()" class="btn-success">Setup All!</button>
+  	<ol class="well">
+      <li ng-click="setupInv(inv)" class="btn btn-sm" ng-repeat="inv in activeList">
+      	<img  height="100px" ng-src="images/arkham/investigators/{{ inv.image }}" />
+      	{{ inv.name}}
+      </li>
+    </ol>
+  	
+  </div>
 </div>
 

@@ -53,14 +53,14 @@
 		<skill-tuple first="Fight" second="Will" inv="inv" available-focus="inv.availableFocus"></skill-tuple>
 		<skill-tuple first="Lore" second="Luck" inv="inv" available-focus="inv.availableFocus"></skill-tuple>
 	</div>
-	<mini-card cards="inv.commonItems" inv="inv"></mini-card>
-	<mini-card cards="inv.uniqueItems" inv="inv"></mini-card>
-	<mini-card cards="inv.spells" inv="inv"></mini-card>
+	<mini-card cards="inv.cards.commonItems" inv="inv" type="common"></mini-card>
+	<mini-card cards="inv.cards.uniqueItems" inv="inv" type="unique"></mini-card>
+	<mini-card cards="inv.cards.spells" inv="inv" type="spell"></mini-card>
   <div class="row cards">
-    <button ng-click="inv.skillsCards.draw()">Draw Skill</button>
+    <button ng-click="inv.cards.skills.draw()">Draw Skill</button>
     <ul>
-     <li ng-repeat="card in inv.skillsCards.list">{{card.name}}.<span> {{card.text}}</span>
-       <a href="" ng-click="inv.skillsCards.discard(card.name)">Discard</a>
+     <li ng-repeat="card in inv.cards.skills.list">{{card.name}}.<span> {{card.text}}</span>
+       <a href="" ng-click="inv.cards.skills.discard(card.name)">Discard</a>
      </li>
     </ul>
   </div>

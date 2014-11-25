@@ -24,12 +24,20 @@ angular.module('arkhamHelperApp')
         inv.inUse = !inv.inUse;
         // remove if new state is inactive
         if(typeof index !== 'undefined') {
-          $scope.activeList.splice($scope.activeList.indexOf(inv),1);
+          activeInvestigators.remove(inv);
         } else {
           // add to last element if now is active
-          $scope.activeList.push(inv);
+          activeInvestigators.add(inv);
         }
       };
       
-    
+      $scope.setupInv = function(inv) {
+    	  activeInvestigators.setupInvestigator(inv);
+      }
+      
+      $scope.setupAll = function() {
+    	  activeInvestigators.setupAll();
+      }
+      
+      
   });

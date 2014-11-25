@@ -43,6 +43,8 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
       if (found) {
         that.list.splice(_.indexOf(that.list, found), 1);
         return found;
+      } else {
+    	  return null;
       }
     };
     /**
