@@ -7,8 +7,8 @@
  * # terrorLevel
  * Service in the arkhamHelperApp.
  */
-angular.module('arkhamHelperApp').service('terrorLevel',
-		function terrorLevel(cardPileAllies) {
+angular.module('arkhamHelperApp').service('terrorLevelService',
+		function terrorLevelService(cardPileAllies) {
 			// AngularJS will instantiate a singleton by calling "new" on this function
 
 			var that = this;

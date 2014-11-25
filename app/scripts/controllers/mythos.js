@@ -8,10 +8,7 @@
  * Controller of the arkhamHelperApp
  */
 angular.module('arkhamHelperApp')
-  .controller('MythosCtrl', function ($scope, mythos, terrorLevel) {
+  .controller('MythosCtrl', function ($scope, mythos, terrorLevelService) {
 	  
 	  $scope.mythos = mythos;
-	  $scope.terrorLevel = terrorLevel.level;
-	  $scope.increaseTerror = terrorLevel.increase;
-	  
   });

@@ -7,8 +7,8 @@ describe('Service: terrorLevel', function () {
 
   // instantiate service
   var terrorLevel;
-  beforeEach(inject(function (_terrorLevel_) {
-    terrorLevel = _terrorLevel_;
+  beforeEach(inject(function (_terrorLevelService_) {
+    terrorLevel = _terrorLevelService_;
   }));
 
   it('should do something', function () {
