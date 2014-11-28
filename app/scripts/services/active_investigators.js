@@ -51,7 +51,7 @@ angular.module('arkhamHelperApp')
     	inv.inUse = false;
     	var that = this;
     	// find if previously active or inactive
-        var index = _.indexOf(inv);
+        var index = _.indexOf(that.list, inv);
         if(index >= 0) {
         	that.list.splice(that.list.indexOf(inv),1);
         	inv.cards.commonItems.discardAll();
