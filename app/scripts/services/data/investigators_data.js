@@ -344,7 +344,7 @@ angular
               minSpeed : 1,
               minSneak : 2,
               minFight : 1,
-              minWill : 4,
+              minWill : 0,
               minLore : 2,
               minLuck : 1,
               curSpeed : 1,

@@ -16,7 +16,8 @@ angular.module('arkhamHelperApp')
       cardPileUnique,
       cardPileAllies,
       cardPileMonsters,
-      cardPileGates) {
+      cardPileGates,
+      cardPileSpecials) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     
 	  /**
@@ -43,6 +44,7 @@ angular.module('arkhamHelperApp')
       inv.cards.allies = cardBucket('allies', cardPileAllies);
       inv.cards.monsters = cardBucket('monsters', cardPileMonsters);
       inv.cards.gates = cardBucket('gates', cardPileGates);
+      inv.cards.specials = cardBucket('specials',cardPileSpecials);
       
       inv.availableFocus = inv.focus;
 

@@ -3,14 +3,14 @@
 
 	<div class="row head">
 		<div class="col-xs-6">
-			<div ng-show="inv.name == first.name" class="col-xs-5 pull-left">
+			<div ng-show="inv.name == first.name">
 				<img height="50px" ng-src="images/arkham/FirstInvestigator.png" />
 			</div>
-			<div class="col-xs-5">
+			<div>
 				<img height="100px" width="100px"
 					ng-src="images/arkham/investigators/{{ inv.image }}" />
 			</div>
-
+			<dice-and-roll></dice-and-roll>
 		</div>
 		<div class="col-xs-6">
 			<h3 class="row">{{ inv.name}}</h3>
@@ -93,6 +93,7 @@
 			</li>
 		</ul>
 	</div>
+  <inv-special-cards-list></inv-special-cards-list>
 	<monsters-trophies inv="inv"></monsters-trophies>
 	<gates-trophies inv="inv"></gates-trophies>
 	<hr>
