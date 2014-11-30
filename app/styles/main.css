@@ -1,97 +1,96 @@
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.header, .marketing, .footer {
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 40px;
+	padding-bottom: 19px;
 }
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+	padding-top: 19px;
+	color: #777;
+	border-top: 1px solid #e5e5e5;
 }
 
 /* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+@media ( min-width : 768px) {
+	.container {
+		max-width: 730px;
+	}
 }
-.container-narrow > hr {
-  margin: 30px 0;
+
+.container-narrow>hr {
+	margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
 }
+
 .jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+	font-size: 21px;
+	padding: 14px 24px;
 }
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+	margin: 40px 0;
 }
-.marketing p + h4 {
-  margin-top: 28px;
+
+.marketing p+h4 {
+	margin-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+	/* Remove the padding we set earlier */
+	.header, .marketing, .footer {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	/* Space out the masthead */
+	.header {
+		margin-bottom: 30px;
+	}
+	/* Remove the bottom border on the jumbotron for visual effect */
+	.jumbotron {
+		border-bottom: 0;
+	}
 }
 
 /**
  * show-grid from bootstrap documentation
  */
 .show-grid {
-  margin-bottom: 15px
+	margin-bottom: 15px
 }
 
 .show-grid [class^=col-] {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #eee;
-  background-color: rgba(86,61,124,.15);
-  border: 1px solid #ddd;
-  border: 1px solid rgba(86,61,124,.2)
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #eee;
+	background-color: rgba(86, 61, 124, .15);
+	border: 1px solid #ddd;
+	border: 1px solid rgba(86, 61, 124, .2)
 }
 
 .background-grey {
@@ -102,6 +101,7 @@ body {
 .box-mark {
 	border: black 1px dashed;
 }
+
 .box-mark-red: {
 	border: red 1px solid;
 }
@@ -112,48 +112,52 @@ body {
 span.huge {
 	font-size: 3em;
 }
+
 span.normal {
 	font-size: 1em;
 }
+
 span.big {
 	font-size: 2em;
 }
+
 span.small {
 	font-size: 0.85em;
 }
 
 .phaseCtrl {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  height: 100px;
-  background: #f0f0f0;
-  padding-left: 50px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-top: 25px;
-  z-index: 1030;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 100px;
+	background: #f0f0f0;
+	padding-left: 50px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-top: 25px;
+	z-index: 1030;
 }
 
 /**
  * investigator 
  */
 .investigator-page .investigator-list-container {
-  width: 100%;
-  overflow-y: scroll;
-  padding: 50px;
+	width: 100%;
+	overflow-y: scroll;
+	padding: 50px;
 }
+
 .investigator-page .investigator-list-container .investigator {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 10px;
 }
 
 .investigator .card-exhausted wrapper-img {
-  opacity: 0.4;
-  filter: alpha(opacity=40); /* msie */
-  background-color: #000;
+	opacity: 0.4;
+	filter: alpha(opacity = 40); /* msie */
+	background-color: #000;
 }
 
 .investigator li.card-exhausted {
@@ -162,8 +166,8 @@ span.small {
 }
 
 .investigator .card-exhausted img {
-  opacity: 0.4;
-  filter: alpha(opacity=40); /* msie */
+	opacity: 0.4;
+	filter: alpha(opacity = 40); /* msie */
 }
 
 .mini-card-options .card-type {
@@ -171,7 +175,7 @@ span.small {
 	font-weight: 140;
 }
 
-.mini-card-options  {
+.mini-card-options {
 	position: fixed;
 	top: 100px;
 	left: 100px;
@@ -186,3 +190,14 @@ span.small {
 	padding: 10px;
 }
 
+.dices .single-dice.highlight {
+	color: red;
+	font-weight: 140;
+	font-size: 1.2em;
+}
+
+.dices .single-dice {
+	color: blue;
+	font-weight: 50;
+	font-size: 1.0em;
+}

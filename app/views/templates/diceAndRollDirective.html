@@ -1,0 +1,13 @@
+<div class="dices">
+	<h4>Dices</h4>
+	<div>Dices: <input type="number" ng-model="dices.count" min="1" max="99"></div>
+	<div>SuccessValue: <input ng-change="evaluateSuccess()" type="number" ng-model="dices.threshold" min="1" max="6"></div>
+	<a class="btn btn-default" href="" ng-click="roll()">Roll [{{dices.sequence}}]</a>
+	<a class="btn btn-default" href="" ng-click="extraRoll()">Extra [{{dices.sequence}}]</a>
+	<a class="btn btn-default" href="" ng-click="reRoll()">ReRoll [{{dices.sequence}}]</a>
+	<div>
+		<div class="single-dice" ng-class="{'highlight': (dice.number >= dices.threshold)}" ng-repeat="dice in dices.result | orderBy: 'number'">{{ dice.number }}</div>
+	</div>
+	<div >Sucess: {{ dices.success }}</div>
+	
+</div>
