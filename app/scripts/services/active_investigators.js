@@ -14,7 +14,9 @@ angular.module('arkhamHelperApp')
       cardPileSpells,
       cardPileSkills,
       cardPileUnique,
-      cardPileAllies) {
+      cardPileAllies,
+      cardPileMonsters,
+      cardPileGates) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     
 	  /**
@@ -39,8 +41,9 @@ angular.module('arkhamHelperApp')
       inv.cards.skills = cardBucket('skills', cardPileSkills);
       inv.cards.uniqueItems = cardBucket('uniqueItems', cardPileUnique);
       inv.cards.allies = cardBucket('allies', cardPileAllies);
+      inv.cards.monsters = cardBucket('monsters', cardPileMonsters);
+      inv.cards.gates = cardBucket('gates', cardPileGates);
       
-      // @TODO allies
       inv.availableFocus = inv.focus;
 
       inv.inUse = true;
@@ -54,10 +57,10 @@ angular.module('arkhamHelperApp')
         var index = _.indexOf(that.list, inv);
         if(index >= 0) {
         	that.list.splice(that.list.indexOf(inv),1);
-        	inv.cards.commonItems.discardAll();
-        	inv.cards.spells.discardAll();
-        	inv.cards.skills.discardAll();
-        	inv.cards.uniqueItems.discardAll();
+        	// discard all trophies and cards
+        	angular.forEach(inv.cards, function(pile) {
+        	  pile.discardAll();
+        	});
         }
         inv.setup = false;
     }
