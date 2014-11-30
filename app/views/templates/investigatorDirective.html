@@ -62,8 +62,10 @@
 	<mini-card cards="inv.cards.commonItems" inv="inv" type="common"></mini-card>
 	<mini-card cards="inv.cards.uniqueItems" inv="inv" type="unique"></mini-card>
 	<mini-card cards="inv.cards.spells" inv="inv" type="spell"></mini-card>
-	<div class="row cards allies"><h4>Allies</h4>
-		<button class="btn-default btn" ng-click="inv.cards.allies.draw()">Draw Ally</button>
+	<div class="row cards allies">
+		<h4>Allies</h4>
+		<button class="btn-default btn" ng-click="inv.cards.allies.draw()">Draw
+			Ally</button>
 		<select-ally inv="inv"></select-ally>
 		<ul>
 			<li ng-class="{'card-exhausted': card.exhaust}"
@@ -78,11 +80,16 @@
 	</div>
 	<div class="row cards">
 		<h4>Skills</h4>
-		<button class="btn btn-default" ng-click="inv.cards.skills.draw()">Draw Skill</button>
+		<button class="btn btn-default" ng-click="inv.cards.skills.draw()">Draw
+			Skill</button>
 		<ul>
-			<li ng-repeat="card in inv.cards.skills.list">{{card.name}}.<span>
-					{{card.text}}</span> <a href=""
-				ng-click="inv.cards.skills.discard(card.name)">Discard</a>
+			<li ng-class="{'card-exhausted': card.exhaust}"
+				ng-repeat="card in inv.cards.skills.list"><strong>{{ card.name}}</strong>. <span>{{card.text}}</span>
+				 <a href=""
+				ng-click="inv.cards.skills.discard(card.name)">Discard</a> <a
+				href="" ng-hide="card.exhaust"
+				ng-click="inv.cards.skills.exhaust(card)">Exhaust</a> <a href=""
+				ng-show="card.exhaust" ng-click="inv.cards.skills.restore(card)">Restore</a>
 			</li>
 		</ul>
 	</div>

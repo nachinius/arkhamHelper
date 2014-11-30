@@ -156,7 +156,7 @@ span.small {
   background-color: #000;
 }
 
-.investigator .allies li.card-exhausted {
+.investigator li.card-exhausted {
 	color: red;
 	background-color: #00;
 }
