@@ -13,8 +13,21 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
   
   var cardPile = function(type) {
     var that = this;
+    
+    /**
+     * @var Direct access to the list
+     * @api
+     */
     that.list = [];
+    
     that.lastId = 0;
+    
+    /**
+     * Add card to the pile.
+     * If missing id, create one for it.
+     * 
+     * @param {Object} card
+     */
     that.add =  function(card) {
       if(angular.isUndefined(card.id)) {
         that.lastId = that.lastId + 1;
@@ -22,21 +35,37 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
       }
       that.push(card);
     };
+    
+    /**
+     * Find a card by its id property
+     * 
+     * @return {Object|null} card
+     */
     that.find = function(id) {
       var found = _.find(that.list, function(card) {
         return card.id == id;
       });
       return found;
     }
+    
+    /**
+     * Find a card identified by its name property
+     * 
+     * @return {Object|null} card
+     */
     that.findByName = function(name) {
       var found = _.find(that.list, function(card) {
         return card.name == name;
       });
       return found;
     };
+    
     /**
      * find the first card given the 'name' and
-     * remove from the deck
+     * remove it from the deck
+     *
+     * @param {string} name
+     * @return {Object|null}
      */
     that.removeByName = function(name) {
       var found = that.findByName(name);
@@ -47,27 +76,41 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
     	  return null;
       }
     };
+    
     /**
      * get one card from the top
+     * 
+     * @return {Object|cad}
      */
     that.draw = function() {
       return that.list.shift();
     };
     
     /**
+     * Draw one card from anywhere in the deck
+     */
+    that.drawRandom = function() {
+      return that.removeAny();
+    };
+    
+    /**
      * put one card at the bottom of the pile
+     * 
+     * @param {Object} card
      */
     that.push = function(card) {
       that.list.push(card);
     }
     
     /**
-     * Remove an Ally card from the deck
+     * Remove any card from the deck
      */
     that.removeAny = function() {
-    	var ally = that.list.shift();
-    	return ally;
+      var count = that.list.count();
+    	var removed = that.list.splice(Math.floor(Math.random()*count),1);
+    	return removed;
     }
+    
     /**
      * @param {integer} n amount of times to shuffle
      */
@@ -81,6 +124,7 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
     if(angular.isUndefined(type)) {
       type = '';
     }
+    that.type = type;
     /**
      * in: camelCase
      * out: Camel Case
