@@ -17,6 +17,7 @@ angular.module('arkhamHelperApp').service('cardPileSkills',
       angular.forEach(skillsData, function(ele) {
         for (var i = ele.quantity; i > 0; i--) {
           
+          // ignore @expasion
           if (ele.expansion !== "") {
             continue;
           }
