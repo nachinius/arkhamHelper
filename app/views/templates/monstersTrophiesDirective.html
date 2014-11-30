@@ -4,12 +4,16 @@
 		<a data-toggle="dropdown" class="btn btn-default" href=""
 			ng-click="select()">Select Monster <span class="caret"></span></a>
 		<ul class="dropdown-menu" role="menu">
-			<li ng-repeat="monster in inv.cards.monsters.externalPile.list"><a
-				href="" ng-click="selecting(monster)" class="btn btn-default btn-sm">
-					<div>{{monster}}</div>
+			<li ng-repeat="monster in inv.cards.monsters.externalPile.list | orderBy: 'name'"><a
+				href="" ng-click="inv.cards.monsters.drawByName(monster.name)" class="btn btn-default btn-sm">
+					<div>{{monster.name}}</div>
 			</a></li>
 		</ul>
 	</div>
-	<div ng-repeat="monster in inv.cards.monsters.list">{{ monster }}
-	</div>
+	<ul>
+		<li ng-repeat="monster in inv.cards.monsters.list | orderBy: 'toughness'">{{
+			monster.name }} <strong>[{{monster.toughness}}]</strong> <a
+			class="btn btn-default btn-sm" href="" ng-click="inv.cards.monsters.discard(monster.name)">Discard</a>
+		</li>
+	</ul>
 </div>

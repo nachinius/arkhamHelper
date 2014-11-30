@@ -14,13 +14,11 @@ angular.module('arkhamHelperApp').directive('monstersTrophies', function() {
     scope : {
       inv : '='
     },
-    controller: function($scope, $element, $attrs, $transclude) {
-      $scope.selecting = function(monster) {
-        $scope.inv.cards.monsters.drawByName(monster.name);
-      }
+    controller : function($scope, $element, $attrs, $transclude) {
+
     },
     link : function postLink(scope, element, attrs) {
-      
+
     }
   };
 });

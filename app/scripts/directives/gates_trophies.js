@@ -13,10 +13,8 @@ angular.module('arkhamHelperApp').directive('gatesTrophies', function() {
     scope : {
       inv : '='
     },
-    controller: function($scope, $element, $attrs, $transclude) {
-      $scope.selecting = function(gate) {
-        $scope.inv.cards.gates.drawByName(gate.name);
-      }
+    controller : function($scope, $element, $attrs, $transclude) {
+
     },
     link : function postLink(scope, element, attrs) {
 
