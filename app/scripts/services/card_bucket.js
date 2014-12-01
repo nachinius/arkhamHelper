@@ -39,7 +39,9 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
     
     /**
      * remove a card from user and back to deck. Put it
-     * at the bottom
+     * at the bottom of the external Pile
+     * 
+     * @param string
      */
     this.discard = function(name) {
 
@@ -48,6 +50,12 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
       this.externalPile.push(card);
     }
 
+    /**
+     * Remove a card identified by its name from this deck.
+     * 
+     * @param {string} name 
+     * @return {object} card
+     */
     this.removeByName = function(name) {
 
       var card = this.cardPile.removeByName(name);

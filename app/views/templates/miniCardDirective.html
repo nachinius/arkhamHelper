@@ -1,7 +1,19 @@
 <div class="row cards">
 	<h4>
-		{{ cards.name }} 
-		<a class="btn btn-default" ng-click="cards.draw()">Draw {{ cards.name }}</a>
+		{{ cards.name }} <a class="btn btn-default" ng-click="cards.draw()">Draw
+			{{ cards.name }}</a>
+
+		<div class="dropdown" ng-hide="cards.externalPile.list.length == 0">
+			<a data-toggle="dropdown" class="btn btn-default" href=""
+				ng-click="select()">Select {{ cards.name }} <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li ng-repeat="ele in cards.externalPile.list | orderBy: 'name'"><a href=""
+					ng-click="cards.drawByName(ele.name)" class="btn btn-default btn-sm">
+						<div>{{ele.name}}</div>
+				</a></li>
+			</ul>
+		</div>
+		
 	</h4>
 	<div class="col-xs-2 col-sm-2" ng-repeat="card in cards.list"
 		ng-class="{'card-exhausted' : card.exhaust}">
@@ -40,7 +52,7 @@
 					</div>
 					<div class="row" ng-show="card.type=='one use'">
 						<a class="btn btn-default btn-sm" href=""
-						ng-click="cards.removeByName(card.name)">Return to Box</a>
+							ng-click="cards.removeByName(card.name)">Return to Box</a>
 					</div>
 					<mini-card-transfer class="row" card="card" inv="inv"
 						type="cards.name"></mini-card-transfer>
