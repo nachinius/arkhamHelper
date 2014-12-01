@@ -38,6 +38,10 @@
 						<a class="btn btn-warning btn-sm" href=""
 							ng-click="cards.restore(card)">Restore</a>
 					</div>
+					<div class="row" ng-show="card.type=='one use'">
+						<a class="btn btn-default btn-sm" href=""
+						ng-click="cards.removeByName(card.name)">Return to Box</a>
+					</div>
 					<mini-card-transfer class="row" card="card" inv="inv"
 						type="cards.name"></mini-card-transfer>
 					<div class="row">
