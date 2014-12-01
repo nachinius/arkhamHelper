@@ -29,6 +29,7 @@ angular.module('arkhamHelperApp').service('mythos',
 					Shuffler(mythosService.deck);
 				}
 			}
+			mythosService.shuffle();
 			
 			mythosService.draw = function() {
 				var card = mythosService.deck.shift();
