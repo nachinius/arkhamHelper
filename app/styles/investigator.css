@@ -1,0 +1,83 @@
+.phaseCtrl {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100px;
+  background: #f0f0f0;
+  padding-left: 50px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 25px;
+  z-index: 1030;
+}
+
+/**
+ * investigator 
+ */
+.investigator-page .investigator-list-container {
+  width: 100%;
+  overflow-y: scroll;
+  padding: 50px;
+}
+
+.investigator-page .investigator-list-container .investigator {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.investigator .card-exhausted wrapper-img {
+  opacity: 0.4;
+  filter: alpha(opacity = 40); /* msie */
+  background-color: #000;
+}
+
+.investigator li.card-exhausted {
+  color: red;
+  background-color: #00;
+}
+
+.investigator .card-exhausted img {
+  opacity: 0.4;
+  filter: alpha(opacity = 40); /* msie */
+}
+
+.mini-card-options .card-type {
+  font-size: 1.5em;
+  font-weight: 140;
+}
+
+.mini-card-options {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 600px;
+  height: 400px;
+  background: white;
+  z-index: 1000;
+  border: 1px darkblue double;
+}
+
+.mini-card-options .row {
+  padding: 10px;
+}
+
+
+.dices .single-dice.highlight {
+  color: red;
+  font-weight: 140;
+  font-size: 1.2em;
+}
+
+.dices .single-dice {
+  color: blue;
+  font-weight: 50;
+  font-size: 1.0em;
+}
+
+.skills {
+	margin-right: 10px;
+	background: lavender;
+	padding: 5px;
+}

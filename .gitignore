@@ -6,4 +6,5 @@ bower_components
 .project
 .grunt
 .tern-project
+.settings/
 
