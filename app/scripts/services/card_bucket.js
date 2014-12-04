@@ -47,6 +47,9 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
 
       var card = this.removeByName(name);
       card.exhaust = false;
+      if(card.trackable) {
+        delete card.tracking;
+      }
       this.externalPile.push(card);
     }
 

@@ -7,13 +7,14 @@
 			<a data-toggle="dropdown" class="btn btn-default" href=""
 				ng-click="select()">Select {{ cards.name }} <span class="caret"></span></a>
 			<ul class="dropdown-menu" role="menu">
-				<li ng-repeat="ele in cards.externalPile.list | orderBy: 'name'"><a href=""
-					ng-click="cards.drawByName(ele.name)" class="btn btn-default btn-sm">
+				<li ng-repeat="ele in cards.externalPile.list | orderBy: 'name'"><a
+					href="" ng-click="cards.drawByName(ele.name)"
+					class="btn btn-default btn-sm">
 						<div>{{ele.name}}</div>
 				</a></li>
 			</ul>
 		</div>
-		
+
 	</h4>
 	<div class="col-xs-2 col-sm-2" ng-repeat="card in cards.list"
 		ng-class="{'card-exhausted' : card.exhaust}">
@@ -50,9 +51,22 @@
 						<a class="btn btn-warning btn-sm" href=""
 							ng-click="cards.restore(card)">Restore</a>
 					</div>
+
+					<div class="row" ng-show="card.trackable">
+						<a class="btn btn-default btn-sm" href=""
+							ng-click="card.tracking={ show: true, value:0};">Track
+							Something</a>
+						<div ng-show="card.tracking.show==true">
+							<a href="" class="btn btn-default btn-sm"
+								ng-click="card.tracking.value=card.tracking.value+1;">Increase
+								Track</a> <span>Current Value: {{ card.tracking.value }}</span>
+						</div>
+					</div>
+
 					<div class="row" ng-show="card.type=='one use'">
 						<a class="btn btn-default btn-sm" href=""
-							ng-click="cards.removeByName(card.name)">Return to Box</a>
+							ng-click="cards.removeByName(card.name)">Return to Box
+							(eliminate from game)</a>
 					</div>
 					<mini-card-transfer class="row" card="card" inv="inv"
 						type="cards.name"></mini-card-transfer>

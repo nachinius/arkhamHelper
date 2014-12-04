@@ -92,7 +92,8 @@ angular
             text: "Any Phase: Put 1 Stamina token from the bank on Enchanted Jewelry to avoid losing 1 Stamina. If there are 3 Stamina tokens on it, discard Enchanted Jewelry.",
             phase: "Any",
             type: "",
-            quantity: 1
+            quantity: 1,
+            trackable: true
           },
           {
             name: "Enchanted Knife",
@@ -217,7 +218,8 @@ angular
             phase: "",
             text: "Any Phase: Put 1 Stamina token from the bank on Silver Key before making an Evade check to automatically pass it. Discard Silver Key after using it if there are 3 Stamina tokens on it.",
             type: "",
-            quantity: 1
+            quantity: 1,
+            trackable: true
           },
           
           {
