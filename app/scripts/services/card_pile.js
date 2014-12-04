@@ -106,7 +106,7 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
      * Remove any card from the deck
      */
     that.removeAny = function() {
-      var count = that.list.count();
+      var count = that.list.length;
     	var removed = that.list.splice(Math.floor(Math.random()*count),1);
     	return removed;
     }
