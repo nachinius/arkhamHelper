@@ -1,0 +1,8 @@
+<ul>
+	<li
+		ng-repeat="monster in monsters.list | orderBy: 'toughness'">{{
+		monster.name }} <strong>[{{monster.toughness}}]</strong> <a
+		class="" href=""
+		ng-click="monsters.discard(monster.name)">Discard</a>
+	</li>
+</ul>

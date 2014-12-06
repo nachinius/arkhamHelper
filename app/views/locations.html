@@ -1,0 +1,34 @@
+<div class="locations-page container">
+
+	<div class="neighborhoods row">
+		<h3>Neighborhoods</h3>
+		<div class="row" ng-repeat="(key,ngh) in svc.lists[svc.NEIGHBORHOOD]">
+			<h4>{{ key }}</h4>
+			<div>
+				<div class="neighborhood-info">{{ ngh.movement}}</div>
+				<div class="monsters">
+					<a href="" ng-click="ngh.cards.monsters.draw();">A Monster Appears</a>
+					<monster-selector monsters="ngh.cards.monsters"></monster-selector>
+					<monster-list monsters="ngh.cards.monsters"></monster-list>
+				</div>
+				<div class="inv-list">
+					<mini-inv object="inv" ng-repeat="inv in ngh.cards.inv.list"></mini-inv>
+				</div>
+			</div>
+
+			<div class="arkham-location-list row"
+				ng-repeat="loc in ngh.locations">
+				<arkham-location object="svc.lists[svc.ARKHAM_LOCATION][loc]">
+				</arkham-location>
+			</div>
+		</div>
+	</div>
+
+	<div class="other-world row">
+		<h3>Other World</h3>
+		<div class="row" ng-repeat="ele in svc.lists[svc.OTHER_WORLD]">
+			{{ ele }}</div>
+	</div>
+
+
+</div>

@@ -7,8 +7,8 @@
  *              arkhamHelperApp.
  */
 angular.module('arkhamHelperApp').constant(
-    'neighborhoodsData.js',
-    [ "Backwoods Country" :{
+    'neighborhoodsData',
+    { "Backwoods Country" :{
       expansion: "Dunwich Horror"
     }, "Blasted Heath": {
       expansion: "Dunwich Horror"
@@ -19,50 +19,74 @@ angular.module('arkhamHelperApp').constant(
     },
         "Downtown" : {
           locations: ["Bank of Arkham", "Arkham Asylum","Independence Square"],
-          white: "Easttown",
-          black: "Northside"
+          movement: {
+            white: "Easttown",
+            black: "Northside"
+          }
         }, 
         "Easttown" : {
-          locations: ["Hibb's Roadhouse","Velma's Dinner","Police Station"],
-          white: "Rivertown",
-          black: "Downtown"
+          locations: ["Hibb's Roadhouse","Velma's Diner","Police Station"],
+          movement: {
+            white: "Rivertown",
+            black: "Downtown"
+          }
         }, 
         "Factory District" : {expansion: "Innsmouth Horror"}, 
         "French Hill" : {
           locations: ["The Witch House", "Silver Twilight Lodge"],
-          white: "Southside",
-          black: "Rivertown"
+          movement: {
+            white: "Southside",
+            black: "Rivertown",
+            other: ["Miskatonic University"]
+          }
         },
         "Harborside" : {expansion: "Kingsport Horror"}, 
         "Innsmouth Shore" : {expansion: "Innsmouth Horror"}, 
         "Kingsport Head" : {expansion: "Kingsport Horror"},
         "Merchant District" : {
           locations: ["Unvisited Isle","River Docks","The Unnamable"],
-          white: "Northside",
-          black: "Miskatonic University"},
+          movement: {
+            white: "Northside",
+            black: "Miskatonic University",
+            other: ["Rivertown"]
+            }
+          },
         "Miskatonic University" : {
-          locations: ["Science Building","Administration","Libary"],
-          white: "Merchant District",
-          black: "Uptown"
+          locations: ["Science Building","Administration Building","Library"],
+          movement: {
+            white: "Merchant District",
+            black: "Uptown",
+            other: ["French Hill"]
+          }
         }, 
         "Northside" : {
           locations: ["Train Station", "Newspaper" , "Curiositie Shoppe"],
-          white: "Downtown",
-          black: "Merchant District"
+          movement: {
+            white: "Downtown",
+            black: "Merchant District"
+          }
         }, 
         "Rivertown" :{
           locations: ["Graveyard","Black Cave","General Store"],
-          white: "French Hill",
-          black: "Easttown"},
+          movement: {
+            white: "French Hill",
+            black: "Easttown",
+            other: ["Merchant Distrcit"]
+          }
+        },
         "South Shore" : {expansion: "Kingsport Horror"},
         "Southside" : {
           locations: ["Ma's Boarding House","South Church","Historical Society"],
-          white: "Uptown",
-          black: "French Hill"
+          movement: {
+            white: "Uptown",
+            black: "French Hill"
+          }
         }, 
         "Uptown" : {
           locations: ["Woods","Ye Olde Magick Shoppe","St. Mary's Hospital"],
-          white: "Miskatonic University",
-          black: "Southside"
+          movement: {
+            white: "Miskatonic University",
+            black: "Southside"
+          }
         }, 
-        "Village Commons" : {expansion: "Dunwich Horror"} ]);
+        "Village Commons" : {expansion: "Dunwich Horror"} });
