@@ -30,6 +30,9 @@ angular.module(
 	}).when('/mythos', {
 		templateUrl : 'views/mythos.html',
 		controller : 'MythosCtrl'
+	}).when('/locations', {
+	  templateUrl: 'views/locations.html',
+	  controller: 'LocationsCtrl'
 	}).otherwise({
 		redirectTo : '/'
 	});

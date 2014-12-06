@@ -1,0 +1,13 @@
+<div class="dropdown monster-selector">
+	<a data-toggle="dropdown" class="" href="">Select
+		Monster <span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu" role="menu">
+		<li
+			ng-repeat="monster in monsters.externalPile.list | orderBy: 'name'"><a
+			href="" ng-click="monsters.drawByName(monster.name)"
+			class="btn btn-default btn-sm">
+				<div>{{monster.name}}</div>
+		</a></li>
+	</ul>
+</div>
