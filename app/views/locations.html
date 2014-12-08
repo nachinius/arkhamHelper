@@ -5,9 +5,12 @@
 		<div class="row" ng-repeat="(key,ngh) in svc.lists[svc.NEIGHBORHOOD]">
 			<h4>{{ key }}</h4>
 			<div>
-				<div class="neighborhood-info">{{ ngh.movement}}</div>
+				<div class="neighborhood-info">
+					<div ng-repeat="(key,where) in ngh.movement | orderBy: key">
+						<span>{{key}}: </span><span>{{where}}</span>
+					</div>
+				</div>
 				<div class="monsters">
-					<a href="" ng-click="ngh.cards.monsters.draw();">A Monster Appears</a>
 					<monster-selector monsters="ngh.cards.monsters"></monster-selector>
 					<monster-list monsters="ngh.cards.monsters"></monster-list>
 				</div>

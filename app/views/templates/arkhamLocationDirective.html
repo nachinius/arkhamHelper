@@ -5,18 +5,16 @@
 		<mini-inv object="inv" ng-repeat="inv in object.cards.inv.list"></mini-inv>
 	</div>
 	<div class="clues">
-		Clues: {{ object.cards.clues }}
+		Clues:
+		<plus-minus value="object.cards.clues" show="1"></plus-minus>
 	</div>
 	<div class="gates">
-    <div class="gate" ng-repeat="gate in object.cards.gates.list">
-    	{{ gate }}
-    </div>
-  </div>
-  <div class="buttons">
-  	<a href="" ng-click="object.cards.monsters.draw();">A Monster Appears</a>
-  	<monster-selector monsters="object.cards.monsters"></monster-selector>
-  	<a href="" ng-click="object.cards.gates.draw();">A Gate Appears</a>
-  	<a href="" ng-click="object.cards.clues = object.cards.clues + 1">Increase Clues</a>
-  	<a href="" ng-click="object.cards.clues = object.cards.clues - 1">Reduce Clues</a>
-  </div>
+		<div class="gate" ng-repeat="gate in object.cards.gates.list">
+			{{ gate }}</div>
+	</div>
+	<div class="buttons">
+		<monster-selector monsters="object.cards.monsters"></monster-selector>
+		<a href="" ng-click="object.cards.gates.draw();">A Gate Appears</a>
+
+	</div>
 </div>

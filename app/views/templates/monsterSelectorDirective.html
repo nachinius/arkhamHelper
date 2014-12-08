@@ -3,6 +3,7 @@
 		Monster <span class="caret"></span>
 	</a>
 	<ul class="dropdown-menu" role="menu">
+		<li><a href="" ng-click="monsters.draw();">Random</a></li>
 		<li
 			ng-repeat="monster in monsters.externalPile.list | orderBy: 'name'"><a
 			href="" ng-click="monsters.drawByName(monster.name)"
