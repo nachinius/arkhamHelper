@@ -1,4 +1,4 @@
-<div class="arkham-location">
+<div class="arkham-location {{ object.className }}">
 	<strong>{{ object.location }}</strong>
 	<monster-list monsters="object.cards.monsters"></monster-list>
 	<div class="inv-list">
@@ -15,6 +15,5 @@
 	<div class="buttons">
 		<monster-selector monsters="object.cards.monsters"></monster-selector>
 		<a href="" ng-click="object.cards.gates.draw();">A Gate Appears</a>
-
 	</div>
 </div>

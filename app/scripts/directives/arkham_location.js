@@ -7,18 +7,22 @@
  * # arkhamLocation
  */
 angular.module('arkhamHelperApp')
-  .directive('arkhamLocation', function (cardPileMonsters, cardPileGates) {
+  .directive('arkhamLocation', function () {
     return {
       templateUrl: 'views/templates/arkhamLocationDirective.html',
       restrict: 'E',
       scope: {
         object: "="
       },
-      link: function postLink(scope, element, attrs) {
-        scope.cardPiles = {
+      controller: function($scope, $element, $attrs, $transclude, cardPileMonsters, cardPileGates) {
+        $scope.cardPiles = {
             monsters: cardPileMonsters,
             gates: cardPileGates
         };
+      },
+      link: function postLink(scope, element, attrs) {
+        scope.className = scope.object.location;
+        scope.className.replace(/ /,'_');
       }
     };
   });

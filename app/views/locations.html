@@ -1,8 +1,6 @@
 <div class="locations-page container">
-
 	<div class="neighborhoods row">
-		<h3>Neighborhoods</h3>
-		<div class="row" ng-repeat="(key,ngh) in svc.lists[svc.NEIGHBORHOOD]">
+		<div class="row ngh-{{key}}" ng-repeat="(key,ngh) in svc.lists[svc.NEIGHBORHOOD]">
 			<h4>{{ key }}</h4>
 			<div>
 				<div class="neighborhood-info">

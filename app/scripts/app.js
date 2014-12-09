@@ -9,7 +9,9 @@
  */
 angular.module(
 		'arkhamHelperApp',
-		[ 'ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize',
+		[ 
+		  //'ngAnimate',
+		  'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize',
 				'ngTouch', 'underscore', 'ui.sortable', 'Shuffler',
 				'ui.bootstrap' ]).config(function($routeProvider) {
 	$routeProvider.when('/', {
