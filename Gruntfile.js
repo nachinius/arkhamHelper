@@ -29,6 +29,10 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      ngtemplates: {
+        files: ['<%= yeoman.app %>/views/**/*.html'],
+        tasks: ['ngtemplates']
+      },
       bower: {
         files: ['bower.json'],
         tasks: ['wiredep']
@@ -60,6 +64,7 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.app %>/views/{,*/}*.html',
+          '<%= yeoman.app %>/views/templates.js'
         ]
       },
     },
@@ -362,6 +367,17 @@ module.exports = function (grunt) {
         repo: 'git@github.com:nachinius/arkhamHelper.git'
       },
       src: ['**']
+    },
+    
+    'ngtemplates' : {
+      app: {
+        cwd: 'app',
+        src: 'views/**/*.html',
+        dest: '<%= yeoman.app %>/views/templates.js',
+        options: {
+          module: 'arkhamHelperApp'
+        }
+      }
     }
   });
 
@@ -374,6 +390,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'ngtemplates',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -397,6 +414,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'ngtemplates',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

@@ -7,4 +7,5 @@ bower_components
 .grunt
 .tern-project
 .settings/
+app/views/templates.js
 
