@@ -20,14 +20,14 @@ angular.module('arkhamHelperApp')
     this.firstPhase = UPKEEP;
     
     /**
-     * @var Count the phases passed
+     * Count the phases passed
      */
     this.counter = 0;
     
     /**
-     * @var In which phase we are
+     * Integer In which phase we are
      */
-    this.currentPhase = 4;
+    this.currentPhase = '4';
    
     
     /**

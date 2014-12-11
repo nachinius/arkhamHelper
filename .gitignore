@@ -8,4 +8,5 @@ bower_components
 .tern-project
 .settings/
 app/views/templates.js
+build/
 
