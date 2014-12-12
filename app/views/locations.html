@@ -1,6 +1,6 @@
 <div class="locations-page container">
-	<div class="neighborhoods row">
-		<div class="row ngh-{{key}}" ng-repeat="(key,ngh) in svc.lists[svc.NEIGHBORHOOD]">
+	<div class="neighborhoods">
+		<div class="{{ ngh.className }} neighborhood" ng-repeat="(key,ngh) in svc.lists[svc.NEIGHBORHOOD]">
 			<h4>{{ key }}</h4>
 			<div>
 				<div class="neighborhood-info">
@@ -17,19 +17,20 @@
 				</div>
 			</div>
 
-			<div class="arkham-location-list row"
-				ng-repeat="loc in ngh.locations">
-				<arkham-location object="svc.lists[svc.ARKHAM_LOCATION][loc]">
-				</arkham-location>
+			
+			<div class="arkham-location row {{loc.className}}" ng-repeat="loc in ngh.locations">
+				<arkham-location object="svc.lists[svc.ARKHAM_LOCATION][loc]"></arkham-location>
+			</div>
+			
+		</div>
+
+		<div class="other-world">
+			<h3>Other World</h3>
+			<div class="row" ng-repeat="ele in svc.lists[svc.OTHER_WORLD]">
+				{{ ele }}</div>
 			</div>
 		</div>
+
 	</div>
-
-	<div class="other-world row">
-		<h3>Other World</h3>
-		<div class="row" ng-repeat="ele in svc.lists[svc.OTHER_WORLD]">
-			{{ ele }}</div>
-	</div>
-
-
 </div>
+

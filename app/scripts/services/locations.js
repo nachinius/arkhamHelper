@@ -37,6 +37,7 @@ angular.module('arkhamHelperApp').service(
         location.cards = {};
         location.cards.monsters = cardBucket('monsters', cardPileMonsters);
         location.cards.inv = cardPile();
+        location.className = key.replace(/ /g,'_').toLowerCase();
         
         that.list[key] = location;
         that.lists[that.NEIGHBORHOOD][key] = location;
@@ -53,6 +54,7 @@ angular.module('arkhamHelperApp').service(
         
         var location = angular.copy(value);
         location.type = that.ARKHAM_LOCATION;
+        location.className = location.location.replace(/ /g,'_').toLowerCase();
         location.cards = {};
         location.cards.monsters = cardBucket('monsters', cardPileMonsters);
         location.cards.gates = cardBucket('gates', cardPileGates);

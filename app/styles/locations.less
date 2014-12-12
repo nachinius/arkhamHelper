@@ -1,5 +1,146 @@
+@widthNgh: 255px;
+@heightNgh: 380px;
+
+@grid-x: 100px;
+@grid-y: 200px;
+
+
+.background(@x) {
+	background-color: @x;
+	border: 1px dashed black;
+	border-radius : 1em;
+}
 
 .locations-page {
-	padding: 3px;
-	margin-left: 15px; 
+	padding: 10px;
+	margin-left: 10px;
+	
+	.neighborhoods {
+		/** stablish coordinates */
+		position: relative;
+		//height: @heightNgh*5;
+		.background(yellow);
+
+		.neighborhood {
+			padding: 10px;
+			margin: 5px;
+			position: absolute;
+		}
+
+		.downtown {
+			.background(#fffaff);
+
+			top: @grid-y;
+			right: @grid-x * 1;
+
+			.bottom {
+				bottom: @grid-y * 0.75;
+			}
+			.bank_of_arkham {
+				position: absolute;
+				right: 150px;
+				width: 120px;
+				.bottom;
+			}
+
+			.arkham_asylum {
+				position: absolute;
+				.bottom;
+				right: 0px;
+				width: 120px;
+			}
+
+			.independence_square {
+				position: absolute;
+				.bottom;
+				left: 200px;
+				width: 120px;
+			}
+
+		}
+
+		.northside {
+			.background(#ea5a11);
+
+			top: @grid-y * 1;
+			left: @grid-x * 1.3;
+
+			.absolute {
+				position: absolute;
+				width: 120px;
+			}
+			.train_station {
+				.absolute;
+				bottom: @grid-y * 0.75;
+				left: 50px;
+			}	
+			.newspaper {
+				.absolute;
+				bottom: @grid-y * 0.75;
+				right: 150px;
+
+			}	
+			.curiositie_shoppe {
+				.absolute;
+				top: @grid-y * 0.25;
+				right: 200px;
+			}	
+		}
+
+		.easttown {
+			.background(#54362e);
+
+			top: @grid-y * 3;
+			right: @grid-x * 1;
+		}
+
+
+		
+
+		.merchant_district {
+			.background(#2d3214);
+
+			top: @grid-y * 6;
+			left: @grid-x * 1;
+		}
+
+		.rivertown {
+			.background(#765172);
+			top: @grid-y * 6;
+			right: @grid-x * 1;;
+		}
+
+		.miskatonic_university {
+			.background(#ffff21);
+			top: @grid-y * 8;
+			left: @grid-x * 1;
+		}
+
+		.french_hill {
+			.background(#236295);
+			top: @grid-y * 8;
+			right: @grid-x * 1;
+
+		}
+
+		
+
+		.southside {
+			.background(#592317);
+			top: @grid-y * 10;
+			right: @grid-x * 1;
+		}
+
+		.uptown {
+			.background(#a20e04);
+			top: @grid-y * 10;
+			left: @grid-x * 1;
+		}
+
+	}
+
+	.other-world {
+		display: none;
+	}
 }
+
