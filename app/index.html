@@ -22,29 +22,24 @@
 
     <!-- endbuild -->
   </head>
-  <body ng-app="arkhamHelperApp">
+  <body ng-app="arkhamHelperApp" layout="row" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container-fluid">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a class="btn btn-default btn-sm" ng-href="#">Home</a></li>
-          <li><a class="btn btn-default btn-sm" ng-href="#/settings">Settings</a></li>
-          <li><a class="btn btn-default btn-sm" ng-href="#/investigator">Investigator</a></li>
-          <li><a class="btn btn-default btn-sm" ng-href="#/arkham_encounters">Encounters</a></li>
-          <li><a class="btn btn-default btn-sm" ng-href="#/mythos">Mythos</a></li>
-          <li><a class="btn btn-default btn-sm" ng-href="#/locations">Locations</a></li>
-        </ul>
-        <h3 class="text-muted">arkhamHelper</h3>
-      </div>
-
-      <div ng-view=""></div>
-
+    <md-sidenav md-is-locked-open="!$media('md')" layout="column" md-component-id="main" class="md-sidenav-left">
+    <md-toolbar md-scroll-shrink layout="column" layout-fill>
+      <h3>Arkham Toolbar</h3>
+    </md-toolbar>
+      <md-content>
+          <div ng-repeat="route in routeConfig">
+            <a ng-href="#{{ route.location }}"> {{ route.name}}</a>
+          </div>
+      </md-content>
+    </md-sidenav>
+    <md-content ng-view="">
       
-    </div>
+    </md-content>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -146,6 +141,7 @@
         <script src="scripts/directives/monster_selector.js"></script>
         <script src="scripts/directives/monster_list.js"></script>
         <script src="views/templates.js"></script>
+        <script src="scripts/services/route_config.js"></script>
         <!-- endbuild -->
 </body>
 </html>

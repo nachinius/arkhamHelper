@@ -8,6 +8,6 @@
  * Controller of the arkhamHelperApp
  */
 angular.module('arkhamHelperApp')
-  .controller('MainCtrl', function ($scope) {
-   
+  .controller('MainCtrl', function ($scope, routeConfig) {
+   $scope.routeConfig = routeConfig;
   });
