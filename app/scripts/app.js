@@ -13,7 +13,7 @@ angular.module(
 		  //'ngAnimate',
 		  'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize',
 				'ngTouch', 'underscore', 'ui.sortable', 'Shuffler',
-				'ui.bootstrap' ]).config(function($routeProvider) {
+				'ui.bootstrap', 'ngMaterial' ]).config(function($routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl : 'views/main.html',
 		controller : 'MainCtrl'
