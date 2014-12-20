@@ -9,5 +9,5 @@
  */
 angular.module('arkhamHelperApp')
   .controller('MainCtrl', function ($scope, routeConfig) {
-   $scope.routeConfig = routeConfig;
+    
   });

@@ -18,29 +18,42 @@
     <link rel="stylesheet" href="styles/investigator.css">
     <link rel="stylesheet" href="styles/mythos.css">
     <link rel="stylesheet" href="styles/settings.css">
+    <link rel="stylesheet" href="bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation.css">
     <link rel="stylesheet/less" type="text/css" href="styles/locations.less">
 
     <!-- endbuild -->
   </head>
-  <body ng-app="arkhamHelperApp" layout="row" ng-controller="MainCtrl">
+  <body ng-app="arkhamHelperApp" layout="column" layout-align="start center" ng-controller="AppCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <md-sidenav md-is-locked-open="!$media('md')" layout="column" md-component-id="main" class="md-sidenav-left">
-    <md-toolbar md-scroll-shrink layout="column" layout-fill>
-      <h3>Arkham Toolbar</h3>
+    
+    
+    <md-toolbar layout="column" md-scroll-shrink="true" >
+      <div class="md-toolbar-tools" flex layout="row" tabindex="0" md-swipe-left="menuSrv.left();" md-swipe-right="menuSrv.right();">
+        <md-button>
+          <mat-icon icon="arrow_back"  ng-click="menuSrv.left();" flex="10">
+        </mat-icon>
+        <md-tooltip>
+            {{ menuSrv.menu.currentSection.prevName}}
+        </md-tooltip>
+        </md-button>
+        <div layout="row" flex layout-fill layout-align="center center">
+          <div ng-if="menuSrv.menu.currentSection.name">{{menuSrv.menu.currentSection.name}}</div>
+        </div>
+        <md-button>
+        <mat-icon icon="arrow_forward" ng-click="menuSrv.right();" flex="10">
+        </mat-icon>
+        <md-tooltip>
+            {{ menuSrv.menu.currentSection.nextName}}
+          </md-tooltip>
+        </md-button>
+      </div>
     </md-toolbar>
-      <md-content>
-          <div ng-repeat="route in routeConfig">
-            <a ng-href="#{{ route.location }}"> {{ route.name}}</a>
-          </div>
-      </md-content>
-    </md-sidenav>
-    <md-content ng-view="">
-      
+    <md-content layout="" layout-padding layout-margin>
+      <div ng-view=""></div>
     </md-content>
-
+    
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -142,6 +155,9 @@
         <script src="scripts/directives/monster_list.js"></script>
         <script src="views/templates.js"></script>
         <script src="scripts/services/route_config.js"></script>
+        <script src="scripts/controllers/app.js"></script>
+        <script src="scripts/services/menu_service.js"></script>
+        <script src="scripts/directives/mat_icon.js"></script>
         <!-- endbuild -->
 </body>
 </html>
