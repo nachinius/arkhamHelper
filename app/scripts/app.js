@@ -12,7 +12,7 @@ angular
         'arkhamHelperApp',
         [
         'ngAnimate',
-        'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch',
+        'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize',
             'underscore', 'ui.sortable', 'Shuffler', 'ui.bootstrap',
             'ngMaterial' ]).config(function($routeProvider, routeConfig, $mdThemingProvider) {
 
