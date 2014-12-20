@@ -4,12 +4,10 @@
 
 See it live at http://nachinius.github.io/arkhamHelper/#/
 
-Helper to play the arkham horror game board.
-
 ## Purpose
 
-This is a client app for helping with arkham playing.
-However, for developing it uses node.js
+- This is a client app to help play arkham horror board game.
+- Explore/practice different technologies
 
 ## Usage
 
@@ -21,27 +19,34 @@ a browser at
 
     http://localhost:9001
 
-with
+However, with
 
     grunt build
-
-all files are copy to /dist which can be
-served statically.
+all files are copy to /dist. From there the app can be served
+statically.
 
 ## Develop
 
 Run 
 
     grunt serve
-and modify files as needed. It
-should automatically reload.
+and modify files as needed. When you save your changes, the
+browser is automatically update it.
 
-## generated initial structure with
+## Skeleton of the app
+The app was bootstraped from a Yeoman generator called generator-angular
 
     yo angular
+    
+## Main Technologies list
+- angular.js
+- html5
+- grunt
+- bower
+- less (wip)
+- materials design (wip)
+- angular-materials
+- angular-templates
+- gulp & dgeni (wip)
+- underscore.js
 
-Yeoman is used for generating new angular's
-services, directives, controllers, and misc. See
-
-    yo angular -h
-and https://github.com/yeoman/generator-angular
