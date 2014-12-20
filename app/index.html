@@ -31,7 +31,7 @@
     
     <md-toolbar layout="column" md-scroll-shrink="true" >
       <div class="md-toolbar-tools" flex layout="row" tabindex="0" md-swipe-left="menuSrv.left();" md-swipe-right="menuSrv.right();">
-        <md-button>
+        <md-button class="md-raised">
           <mat-icon icon="arrow_back"  ng-click="menuSrv.left();" flex="10">
         </mat-icon>
         <md-tooltip>
@@ -41,7 +41,7 @@
         <div layout="row" flex layout-fill layout-align="center center">
           <div ng-if="menuSrv.menu.currentSection.name">{{menuSrv.menu.currentSection.name}}</div>
         </div>
-        <md-button>
+        <md-button class="md-raised">
         <mat-icon icon="arrow_forward" ng-click="menuSrv.right();" flex="10">
         </mat-icon>
         <md-tooltip>
@@ -50,7 +50,7 @@
         </md-button>
       </div>
     </md-toolbar>
-    <md-content layout="" layout-padding layout-margin>
+    <md-content layout="center center" layout-padding layout-margin>
       <div ng-view=""></div>
     </md-content>
     
