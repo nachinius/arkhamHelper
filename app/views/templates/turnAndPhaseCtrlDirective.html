@@ -1,32 +1,19 @@
-<div class="phaseCtrl">
+<div class="phaseCtrl" layout="row" layout-align="space-around center" layout-padding>
+
+  <div flex="25">
+    <h4>Phase: </h4><strong>{{phase.phases[phase.currentPhase]}}</strong>
+  </div>
 	
-	<div class="row">
-		<div class="col-sm-2">
-			<button ng-click="phase.nextInvestigatorOrPhase()"
-				class="btn btn-success">Next Turn</button>
-		</div>
-		<div class="col-sm-2">
-		</div>
-		<h4 class="col-sm-2">
-			Phase: <strong>{{ phase.phases[phase.currentPhase] }}</strong>
-		</h4>
-		<div class="col-sm-4">
-			<div>
-				<div class="row">
-					<div class="col-sm-4">Current:</div>
-					<div class="col-sm-4">{{ phase.currentInvestigator.name}}</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4">First:</div>
-					<div class="col-sm-4">{{ phase.firstInvestigator.name}}</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-1 pull-right">
-			<a class="btn btn-info btn-xs" href="#/settings">Settings</a> <a
-				class="btn btn-info btn-xs" href="#/arkham_encounters">Encounter</a>
-			<a class="btn btn-info btn-xs" href="#/mythos">Mythos</a>
-		</div>
-	</div>
+  <div flex="25" class="md-whiteframe-z1">
+    <h4>Current Player: </h4><strong>{{phase.currentInvestigator.name}}</strong>
+  </div>
+  
+  <div flex="25">
+    <h4>First Player: </h4><strong>{{phase.firstInvestigator.name}}</strong>
+  </div>
+  
+  <div flex="25">
+    <md-button class="md-primary md-raised" ng-click="phase.nextInvestigatorOrPhase();">Next Turn</md-button>
+  </div>
 	
 </div>

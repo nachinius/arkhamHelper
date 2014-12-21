@@ -1,16 +1,3 @@
-.phaseCtrl {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  height: 100px;
-  background: #f0f0f0;
-  padding-left: 50px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-top: 25px;
-  z-index: 1030;
-}
 
 /**
  * investigator 
