@@ -23,13 +23,13 @@
 
     <!-- endbuild -->
   </head>
-  <body ng-app="arkhamHelperApp" layout="column" layout-align="start center" ng-controller="AppCtrl">
+  <body ng-app="arkhamHelperApp" ng-controller="AppCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-    
-    <md-toolbar layout="column" md-scroll-shrink="true" >
+    <div layout="column" layout-align="start center" layout-padding layout-margin>
+    <md-toolbar layout="column">
       <div class="md-toolbar-tools" flex layout="row" tabindex="0" md-swipe-left="menuSrv.left();" md-swipe-right="menuSrv.right();">
         <md-button class="md-raised">
           <mat-icon icon="arrow_back"  ng-click="menuSrv.left();" flex="10">
@@ -50,9 +50,8 @@
         </md-button>
       </div>
     </md-toolbar>
-    <md-content layout="center center" layout-padding layout-margin>
-      <div ng-view=""></div>
-    </md-content>
+    <md-content ng-view="" flex layout-padding layout-fill></md-content>
+    </div>
     
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

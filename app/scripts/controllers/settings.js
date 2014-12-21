@@ -21,7 +21,7 @@ angular.module('arkhamHelperApp')
         // find if previously active or inactive
         var index = _($scope.activeList).find(inv);
         // flag it inside the inv object
-        inv.inUse = !inv.inUse;
+        // inv.inUse = !inv.inUse;
         // remove if new state is inactive
         if(typeof index !== 'undefined') {
           activeInvestigators.remove(inv);
