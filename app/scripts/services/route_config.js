@@ -3,8 +3,18 @@
 /**
  * @ngdoc service
  * @name arkhamHelperApp.routeConfig
- * @description # routeConfig Constant in the
- *              arkhamHelperApp.
+ * @description # routeConfig is an array
+ * of object whose key, values are used to configure
+ * the menu service.
+ * 
+ * - location: string as accepted by $routeProvider.when
+ * - templateUrl: string with the same meaning as $routeProvier
+ * - controller: idem
+ * - name: string used to display (if necessary)
+ * - topMenuOrder: integer that indicates it's order in the menu
+ * (useful for loops)
+ *              
+ * 
  */
 angular.module('arkhamHelperApp').constant('routeConfig', [ {
   location : '/',
@@ -47,4 +57,36 @@ angular.module('arkhamHelperApp').constant('routeConfig', [ {
   controller : 'LocationsCtrl',
   name : 'Board',
   topMenuOrder: 10
-} ]);
+} ]).config(function($routeProvider, routeConfig) {
+  (function setTopMenuOrder(routeConfig) {
+    var orderedList = _.chain(routeConfig).filter(function(ele) {
+       return angular.isDefined(ele.topMenuOrder);
+     }).sortBy('topMenuOrder').value();
+     var length = orderedList.length;
+     angular.forEach(orderedList, function(ele, idx) {
+
+       if (idx === 0) {
+         ele.prev = orderedList[length - 1].location;
+         ele.prevName = orderedList[length - 1].name;
+       } else { 
+         ele.prev = orderedList[idx - 1].location;
+         ele.prevName = orderedList[idx-1].name;
+       }
+       if (idx === length - 1) {
+         ele.next = orderedList[0].location;
+         ele.nextName = orderedList[0].name;
+       } else {
+         ele.next = orderedList[idx + 1].location;
+         ele.nextName = orderedList[idx + 1].name;
+       }
+     });
+   })(routeConfig);
+   
+   // configure the routes
+   angular.forEach(routeConfig, function(route) {
+     $routeProvider.when(route.location, route)
+   });
+   $routeProvider.otherwise({
+     redirect : '/'
+   });
+});
