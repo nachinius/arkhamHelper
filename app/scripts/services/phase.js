@@ -44,14 +44,14 @@ angular.module('arkhamHelperApp')
     this.nextPhase = function() {
       this.counter++;
       return this.getCurrentPhase();
-    }
+    };
     
     // shortcut
     var activeList = activeInvestigators.list;
     
     this.getActivePlayers = function() {
       return activeList.length;
-    }
+    };
     
     /**
      * @var
@@ -93,9 +93,9 @@ angular.module('arkhamHelperApp')
       this.currentInvestigator = activeList[currentIndex];
       
       // we end with the investigators: next phase
-      if(currentIndex == firstIndex) {
+      if(currentIndex === firstIndex) {
         this.nextPhase();
       }
-    }
+    };
     
   });

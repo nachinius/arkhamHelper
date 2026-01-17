@@ -51,7 +51,7 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
         delete card.tracking;
       }
       this.externalPile.push(card);
-    }
+    };
 
     /**
      * Remove a card identified by its name from this deck.
@@ -63,7 +63,7 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
 
       var card = this.cardPile.removeByName(name);
       return card;
-    }
+    };
 
     /**
      * discard all cards
@@ -84,14 +84,14 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
     this.exhaust = function(card) {
 
       card.exhaust = true;
-    }
+    };
     /**
      * Restore the status of an exhausted card
      */
     this.restore = function(card) {
 
       card.exhaust = false;
-    }
+    };
     /**
      * find the first card in the bucket that has the name
      */
@@ -99,7 +99,7 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
 
       var found = this.cardPile.findByName(name);
       return found;
-    }
+    };
 
     /**
      * Attempt to draw a specific card identified by name
@@ -113,7 +113,7 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
       } else {
         return null;
       }
-    }
+    };
 
     /**
      * get a card from the external pile
@@ -128,7 +128,7 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
       } else {
         return null;
       }
-    }
+    };
     return this;
   };
   
@@ -136,5 +136,5 @@ angular.module('arkhamHelperApp').factory('cardBucket', function(cardPile) {
   return function Factory(type, pile) {
 
     return new cardBucket(type, pile);
-  }
+  };
 });

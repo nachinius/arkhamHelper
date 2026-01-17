@@ -16,6 +16,6 @@ angular.module('arkhamHelperApp').service('terrorLevelService',
 			that.increase = function() {
 				cardPileAllies.removeAny();
 				that.level.value++;
-			}
+			};
 
 		});

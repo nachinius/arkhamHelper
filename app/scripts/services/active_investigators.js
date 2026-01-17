@@ -17,7 +17,8 @@ angular.module('arkhamHelperApp')
       cardPileAllies,
       cardPileMonsters,
       cardPileGates,
-      cardPileSpecials) {
+      cardPileSpecials,
+      _) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     
 	  /**

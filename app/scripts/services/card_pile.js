@@ -43,10 +43,10 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
      */
     that.find = function(id) {
       var found = _.find(that.list, function(card) {
-        return card.id == id;
+        return card.id === id;
       });
       return found;
-    }
+    };
     
     /**
      * Find a card identified by its name property
@@ -55,7 +55,7 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
      */
     that.findByName = function(name) {
       var found = _.find(that.list, function(card) {
-        return card.name == name;
+        return card.name === name;
       });
       return found;
     };
@@ -100,7 +100,7 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
      */
     that.push = function(card) {
       that.list.push(card);
-    }
+    };
     
     /**
      * Remove any card from the deck
@@ -109,13 +109,13 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
       var count = that.list.length;
     	var removed = that.list.splice(Math.floor(Math.random()*count),1);
     	return removed;
-    }
+    };
     
     /**
      * @param {integer} n amount of times to shuffle
      */
     that.shuffle = function(n) {
-      n = n | 1;
+      n = n || 1;
       while(n-- > 0) {
         Shuffler(that.list);
       }
@@ -130,7 +130,7 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
      * out: Camel Case
      */
     this.name = type.replace(/^[a-z]|[A-Z]/g, function(match,offset) {
-      return offset === 0 ? match.toUpperCase() : " " + match;
+      return offset === 0 ? match.toUpperCase() : ' ' + match;
     });
     /**
      * in: camelCase
@@ -143,5 +143,5 @@ angular.module('arkhamHelperApp').factory('cardPile', function(Shuffler, _) {
   
   return function Factory(type) {
     return new cardPile(type);
-  }
+  };
 });

@@ -28,7 +28,7 @@ angular.module('arkhamHelperApp').service('mythos',
 				for (var i = 0; i < 7; i++) {
 					Shuffler(mythosService.deck);
 				}
-			}
+			};
 			mythosService.shuffle();
 			
 			mythosService.draw = function() {
@@ -44,7 +44,7 @@ angular.module('arkhamHelperApp').service('mythos',
 					mythosService.rumor = card;
 				}
 				return card;
-			}
+			};
 			
 			mythosService.replaceEnvironment = function(newCard) {
 				if(angular.isObject(mythosService.environment)) {
@@ -53,12 +53,12 @@ angular.module('arkhamHelperApp').service('mythos',
 					}
 				}
 				mythosService.environment = newCard;
-			}
+			};
 			
 			mythosService.removeRumor = function() {
 				mythosService.oldRumor.unshift(mythosService.rumor);
 				mythosService.rumor = null;
-			}
+			};
 			
 			mythosService.current = null;
 			mythosService.environment = null;
