@@ -20,14 +20,14 @@ angular.module('arkhamHelperApp')
           inv: '=',
           type: '='
         },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope, element) {
         scope.list = activeInvestigators.list;
         scope.showOptions = false;
         scope.transfer = function(targetInv, sourceInv) {
         	var bucket = sourceInv.cards[transform[scope.type]]; 
         	var card = bucket.removeByName(scope.card.name);
         	targetInv.cards[transform[scope.type]].add(card);
-        }
+        };
       }
     };
   });

@@ -12,9 +12,9 @@ angular.module('arkhamHelperApp')
       templateUrl: 'views/templates/miniInvDirective.html',
       restrict: 'E',
       scope: {
-        object: "="
+        object: '='
       },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope, element) {
         element.text('this is the miniInv directive');
       }
     };

@@ -41,10 +41,11 @@ angular.module(
 }).run(
 		[ '$rootScope', '$location', '$window',
 				function($rootScope, $location, $window) {
-					$rootScope.$on('$locationChangeSuccess', function(event) {
+					$rootScope.$on('$locationChangeSuccess', function() {
 
-						if (!$window.ga)
+						if (!$window.ga) {
 							return;
+						}
 
 						$window.ga('send', 'pageview', {
 							page : $location.path()

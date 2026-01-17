@@ -17,7 +17,8 @@ angular.module('arkhamHelperApp')
       cardPileAllies,
       cardPileMonsters,
       cardPileGates,
-      cardPileSpecials) {
+      cardPileSpecials,
+      _) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     
 	  /**
@@ -35,7 +36,7 @@ angular.module('arkhamHelperApp')
       this.lastId++;
       inv.id = this.lastId;
       
-      inv.cards = {}
+      inv.cards = {};
       // set cards buckets
       inv.cards.commonItems = cardBucket('commonItems', cardPileCommonItems);
       inv.cards.spells = cardBucket('spells', cardPileSpells);
@@ -50,7 +51,7 @@ angular.module('arkhamHelperApp')
 
       inv.inUse = true;
       this.list.push(inv);
-    }
+    };
     
     this.remove = function(inv) {
     	inv.inUse = false;
@@ -65,12 +66,12 @@ angular.module('arkhamHelperApp')
         	});
         }
         inv.setup = false;
-    }
+    };
     
     this.setupAll = function(inv) {
     	var that = this;
     	this.list.forEach(that.setupInvestigator);
-    }
+    };
     
     this.setupInvestigator = function(inv) {
     	var card;
@@ -121,24 +122,25 @@ angular.module('arkhamHelperApp')
     		});
     		
     		inv.randomPossessions.forEach(function(random) {
+    			var i;
     			switch (random.type) {
     			case 'common':
-    				for(var i=random.quantity;i>0;i--) {
+    				for(i=random.quantity;i>0;i--) {
     					inv.cards.commonItems.draw();
     				}
     				break;
     			case 'unique':
-    				for(var i=random.quantity;i>0;i--) {
+    				for(i=random.quantity;i>0;i--) {
     					inv.cards.uniqueItems.draw();
     				}
     				break;
     			case 'skill':
-    				for(var i=random.quantity;i>0;i--) {
+    				for(i=random.quantity;i>0;i--) {
     					inv.cards.skills.draw();
     				}
     				break;
     			case 'spell':
-    				for(var i=random.quantity;i>0;i--) {
+    				for(i=random.quantity;i>0;i--) {
     					card = inv.cards.spells.draw();
     				}
     				break;
@@ -147,7 +149,7 @@ angular.module('arkhamHelperApp')
     				break;
     			}
     		});
-    }
+    };
     
     this.add(investigatorsData[1]);
     this.add(investigatorsData[2]);

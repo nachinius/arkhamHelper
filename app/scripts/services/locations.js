@@ -47,7 +47,7 @@ angular.module('arkhamHelperApp').service(
       angular.forEach(locationsData, function(value, key) {
 
         // only no-expansions
-        if (angular.isDefined(value.expansion) && value.expansion != '') {
+        if (angular.isDefined(value.expansion) && value.expansion !== '') {
           return;
         }
         
@@ -57,7 +57,7 @@ angular.module('arkhamHelperApp').service(
         location.cards.monsters = cardBucket('monsters', cardPileMonsters);
         location.cards.gates = cardBucket('gates', cardPileGates);
         location.cards.inv = cardPile();
-        if (value.stability === "Unstable Location") {
+        if (value.stability === 'Unstable Location') {
           location.cards.clues = 1;
         } else {
           location.cards.clues = 0;
@@ -74,7 +74,7 @@ angular.module('arkhamHelperApp').service(
       // other worlds came from gates available
       angular.forEach(gatesData, function(value, key) {
 
-        if (angular.isDefined(value.expansion) && value.expansion != '') {
+        if (angular.isDefined(value.expansion) && value.expansion !== '') {
           return;
         }
         

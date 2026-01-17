@@ -12,7 +12,7 @@ angular.module('arkhamHelperApp')
       templateUrl: 'views/templates/arkhamLocationDirective.html',
       restrict: 'E',
       scope: {
-        object: "="
+        object: '='
       },
       controller: function($scope, $element, $attrs, $transclude, cardPileMonsters, cardPileGates) {
         $scope.cardPiles = {
@@ -20,7 +20,7 @@ angular.module('arkhamHelperApp')
             gates: cardPileGates
         };
       },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope) {
         scope.className = scope.object.location;
         scope.className.replace(/ /,'_');
       }

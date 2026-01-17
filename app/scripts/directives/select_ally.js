@@ -15,14 +15,14 @@ angular.module('arkhamHelperApp').directive(
         scope: {
           'inv': '='
         },
-        controller : function($scope, $element, $attrs, $transclude,
+        controller : function($scope, $transclude,
             cardPileAllies) {
           $scope.cardPileAllies = cardPileAllies;
         },
-        link : function postLink($scope, $element, $attrs) {
+        link : function postLink($scope) {
           $scope.selecting = function(ally) {
             $scope.inv.cards.allies.drawByName(ally.name);
-          }
+          };
         }
       };
     });
