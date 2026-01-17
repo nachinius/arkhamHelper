@@ -33,11 +33,11 @@ angular.module('arkhamHelperApp')
       
       $scope.setupInv = function(inv) {
     	  activeInvestigators.setupInvestigator(inv);
-      }
+      };
       
       $scope.setupAll = function() {
     	  activeInvestigators.setupAll();
-      }
+      };
       
       
   });

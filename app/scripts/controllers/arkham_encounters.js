@@ -16,7 +16,7 @@ angular.module('arkhamHelperApp')
 	  function collectByNeighborhood(data) {
 		  var result = {};
 		  var neighbor;
-		  angular.forEach(data, function(value, key) {
+		  angular.forEach(data, function(value) {
 			  neighbor = value.neighborhood;
 			  result[neighbor] = result[neighbor] || { list: []};
 			  result[neighbor].list.push(value);
@@ -31,24 +31,26 @@ angular.module('arkhamHelperApp')
 	  $scope.locationCards = {};
 	  $scope.resetClicked = function(name, key) {
 		  $scope.locationCards[name].push($scope.clicked[name].splice(key,1).pop());
-	  }
+	  };
 	  var prepareLocation = function(location) {
 		  var name = location.name;
 		  $scope.clicked[name] = $scope.clicked[name] || [];
 		  $scope.locationCards[name] = $scope.locationCards[name] || angular.copy(location.encounters);
-	  }
+	  };
 	  $scope.drawEncounter = function(location) {
 		  var name = location.name;
 		  
 		  prepareLocation(location);
 		  
 		  var length = $scope.locationCards[name].length;
-		  if(length === 0) return;
+		  if(length === 0) {
+			  return;
+		  }
 		  var choosen = Math.floor(Math.random()*length);
 		  
 		  $scope.clicked[name].push($scope.locationCards[name].splice(choosen,1).pop());
 		  
-	  }
+	  };
 	  
 	  
   });

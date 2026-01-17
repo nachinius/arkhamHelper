@@ -11,10 +11,10 @@ angular.module('arkhamHelperApp')
     return {
       templateUrl: 'views/templates/diceAndRollDirective.html',
       restrict: 'E',
-      controller: function($scope, $element, $attrs, $transclude) {
+      controller: function($scope) {
         var diceRoll = function() {
           return Math.floor(Math.random()*6)+1;
-        }
+        };
         var diceCountSuccess = function() {
           return _.reduce($scope.dices.result, function(memo, num) {
             return memo + (($scope.dices.threshold <= num.number) ? 1 : 0);
@@ -22,7 +22,7 @@ angular.module('arkhamHelperApp')
         };
         var evaluateSuccess = $scope.evaluateSuccess = function() {
           $scope.dices.success = diceCountSuccess();
-        }
+        };
         $scope.roll = function() {
           $scope.dices.result.length = 0;
           var count = $scope.dices.count;
@@ -32,7 +32,7 @@ angular.module('arkhamHelperApp')
           //$scope.dices.result.sort();
           $scope.dices.sequence++;
           evaluateSuccess();
-        }
+        };
         $scope.extraRoll = function() {
           $scope.dices.result.push({number: diceRoll()});
           $scope.dices.sequence++;
@@ -49,7 +49,7 @@ angular.module('arkhamHelperApp')
           $scope.digest();
         };
       },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope) {
         scope.dices = {};
         scope.dices.result = [];
         scope.dices.count = 1;
